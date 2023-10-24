@@ -1,0 +1,129 @@
+:root {
+	--cont-header: 40px;
+}
+/*------------- GENERAL -----------------------*/
+.default {
+	height: calc(100vh - 20px - 40px);
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: 
+		"reminder tasking"
+		"reminder status";
+}
+.def-cont header {
+	width: 100%;
+	height: var(--cont-header);
+	background: var(--dark2);
+	display: flex;
+	align-items: center;
+}
+.def-cont header span {
+	display: block;
+	color: var(--white);
+	padding-left: 40px;
+	font-weight: 400;
+	font-size: 14px;
+	font-family: 'Noto Sans Mono';
+	line-height: 1;
+}
+.def-cont > div {
+	width: 100%;
+	height: calc(100% - var(--cont-header));
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+/*------------------- REMINDER ------------------- */
+.def-reminder-cont {
+	grid-area: reminder;
+	margin: 10px;
+	margin-right: 5px;
+	height: calc(2fr - 20px);
+}
+.def-reminder-cont-body {
+	display: flex;
+	overflow-y: auto;
+	background: var(--dark3);
+}::-webkit-scrollbar {
+	width: 10px;
+}::-webkit-scrollbar-thumb {
+	background: var(--dark4);
+	background: transparent;
+	border-radius: 6px;
+}
+.def-reminder-cont-body:hover::-webkit-scrollbar-thumb {
+	background: var(--dark4);
+}
+.def-reminder-cont-body div {
+	margin: 32px;
+	/*box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.25);*/
+	font-size: 14px;
+	font-size: 16px;
+	font-family: 'Noto Sans Mono';
+	color: var(--white);
+	font-weight: 200;
+}
+.def-reminder-cont-body div span::before {
+	content: "";
+	display: none;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-right: 5px;
+	font-size: 10px;
+	background: radial-gradient(var(--aqua2-5) 50%, var(--aqua1), var(--dark1));
+	background: #777;
+	border-radius: 6px;
+	/*clip-path: polygon(0% 0%, 100% 50%, 0% 100%);*/
+}
+#def-reminder-cont-body__div-1, 
+#def-reminder-cont-body__div-2 {
+	margin-bottom: 0;
+}
+/*------------------ TASKING -------------------*/
+.def-task-cont {
+	grid-area: tasking;
+	background: var(--dark3);
+	margin: 10px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	height: calc(1fr - 10px);
+}
+.def-task-cont-body {
+	overflow-y: auto;
+}::-webkit-scrollbar {
+	width: 10px;
+}::-webkit-scrollbar-thumb {
+	background: var(--dark4);
+	background: transparent;
+	border-radius: 6px;
+}
+.def-task-cont-body:hover::-webkit-scrollbar-thumb {
+	background: var(--dark4);
+}
+.def-task-cont-body .dtcb__div {
+	width: 90%;
+	height: 20%;
+	background: var(--dark1);
+	margin-top: 22px;
+	border-radius: 3px;
+}
+.dtcb__div:last-child {
+	margin-bottom: 22px;
+}
+/*------------------ STATUS -------------------*/
+.def-status-cont {
+	grid-area: status;
+	background: var(--dark3);
+	margin: 10px;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+.def-status-cont-body {
+	align-items: center;
+	font-size: 17px;
+	color: #aaa;
+}

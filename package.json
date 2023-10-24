@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "live-server public",
+    "start": "live-server src/public",
     "dev": "nodemon server/app.js"
   },
   "keywords": [],
