@@ -116,26 +116,37 @@ button {
 .r-aside__section {
     flex-basis: 100%;
     height: 6%;
-    background: transparent;
     margin-top: 4px;
     border-radius: 2px;
-    border: none;
-    color: var(--white);
     font-size: 12px;
     padding-left: 4px;
     display: inherit;
     align-items: center;
     font-family: 'Noto Sans Mono';
-    transition: opacity .1s ease;
     cursor: pointer;
+    background: transparent;
+    color: var(--white);
+    border: none;
+    transition: opacity .2s ease;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
 }
-.r-aside__section:hover {
-    color: #aaa;
+.r-aside__section:first-child {
+    margin-top: 0;
+}
+.r-aside__section span {
+    display: inline;
+    position: absolute;
 }
 .r-aside__section--active {
     background: var(--dark2);
     color: var(--aqua3);
     border-left: 2px solid var(--aqua3);
+    padding-left: 2px;
+}
+.r-aside__section:hover {
+    color: #aaa;
 }
 .r-aside__section--active:hover {
     color: var(--aqua3);
