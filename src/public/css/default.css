@@ -1,8 +1,8 @@
 :root {
 	--cont-header: 40px;
 }
-/*------------- GENERAL -----------------------*/
-.default {
+/*------------- All-Articles -----------------------*/
+.default-section {
 	height: calc(100vh - 20px - 40px);
 	width: 100%;
 	display: grid;
@@ -12,14 +12,14 @@
 		"reminder tasking"
 		"reminder status";
 }
-.def-cont header {
+.default-containers > header {
 	width: 100%;
 	height: var(--cont-header);
 	background: var(--dark2);
 	display: flex;
 	align-items: center;
 }
-.def-cont header span {
+.default-containers > header > span {
 	display: block;
 	color: var(--white);
 	padding-left: 40px;
@@ -28,7 +28,7 @@
 	font-family: 'Noto Sans Mono';
 	line-height: 1;
 }
-.def-cont > div {
+.default-containers > div {
 	width: 100%;
 	height: calc(100% - var(--cont-header));
 	position: relative;
@@ -36,14 +36,13 @@
 	justify-content: center;
 	flex-wrap: wrap;
 }
-/*------------------- REMINDER ------------------- */
-.def-reminder-cont {
+/*------------------- Reminder-Article ------------------- */
+.default__reminder-container {
 	grid-area: reminder;
-	margin: 10px;
-	margin-right: 5px;
+	margin: 10px 5px 10px 10px;
 	height: calc(2fr - 20px);
 }
-.def-reminder-cont-body {
+.default__reminder-body {
 	display: flex;
 	overflow-y: auto;
 	background: var(--dark3);
@@ -54,37 +53,32 @@
 	background: transparent;
 	border-radius: 6px;
 }
-.def-reminder-cont-body:hover::-webkit-scrollbar-thumb {
+.default__reminder-body:hover::-webkit-scrollbar-thumb {
 	background: var(--dark4);
 }
-.def-reminder-cont-body div {
+.default__reminder-body > div {
 	margin: 32px;
-	/*box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.25);*/
-	font-size: 14px;
 	font-size: 16px;
 	font-family: 'Noto Sans Mono';
 	color: var(--white);
 	font-weight: 200;
 }
-.def-reminder-cont-body div span::before {
+.default__reminder-body > div:nth-of-type(1),
+.default__reminder-body > div:nth-of-type(2) {
+	margin-bottom: 0;
+}
+.default__reminder-body > div > span::before {
 	content: "";
-	display: none;
 	display: inline-block;
 	width: 10px;
 	height: 10px;
 	margin-right: 5px;
 	font-size: 10px;
-	background: radial-gradient(var(--aqua2-5) 50%, var(--aqua1), var(--dark1));
 	background: #777;
 	border-radius: 6px;
-	/*clip-path: polygon(0% 0%, 100% 50%, 0% 100%);*/
 }
-#def-reminder-cont-body__div-1, 
-#def-reminder-cont-body__div-2 {
-	margin-bottom: 0;
-}
-/*------------------ TASKING -------------------*/
-.def-task-cont {
+/*------------------ Tasking-Article -------------------*/
+.default__tasking-container {
 	grid-area: tasking;
 	background: var(--dark3);
 	margin: 10px;
@@ -92,19 +86,18 @@
 	margin-bottom: 5px;
 	height: calc(1fr - 10px);
 }
-.def-task-cont-body {
+.default__tasking-body {
 	overflow-y: auto;
 }::-webkit-scrollbar {
 	width: 10px;
 }::-webkit-scrollbar-thumb {
-	background: var(--dark4);
 	background: transparent;
 	border-radius: 6px;
 }
-.def-task-cont-body:hover::-webkit-scrollbar-thumb {
+.default__tasking-body:hover::-webkit-scrollbar-thumb {
 	background: var(--dark4);
 }
-.def-task-cont-body .dtcb__div {
+.default__tasking-body .dtcb__div {
 	width: 90%;
 	height: 20%;
 	background: var(--dark4);
@@ -114,15 +107,15 @@
 .dtcb__div:last-child {
 	margin-bottom: 22px;
 }
-/*------------------ STATUS -------------------*/
-.def-status-cont {
+/*------------------ Status-Article -------------------*/
+.default__status-container {
 	grid-area: status;
 	background: var(--dark3);
 	margin: 10px;
 	margin-left: 5px;
 	margin-top: 5px;
 }
-.def-status-cont-body {
+.default__status-body {
 	align-items: center;
 	font-size: 17px;
 	color: #aaa;
