@@ -107,7 +107,7 @@
 .def-task-cont-body .dtcb__div {
 	width: 90%;
 	height: 20%;
-	background: var(--dark1);
+	background: var(--dark4);
 	margin-top: 22px;
 	border-radius: 3px;
 }
