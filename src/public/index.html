@@ -5,89 +5,94 @@
 	<title>ManagerEterno</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/shared-between.css">
+	<link rel="stylesheet" type="text/css" href="css/body/main.css">
+	<link rel="stylesheet" type="text/css" href="css/body/l-aside.css">
+	<link rel="stylesheet" type="text/css" href="css/body/r-aside.css">
+	<link rel="stylesheet" type="text/css" href="default-section/css/default.css">
 </head>
 <body>
-	<div class="body">
-		<!-- Header -->
-		<header class="header">
-		</header>
-		<div id="container">
-			<!-- Left-Aside -->
-			<aside class="l-aside">
-				<button class="l-aside__button">
-					<img src="assets/img/right-arrow.png">
-				</button>	
-			</aside>
-			<!-- Where sections are displayed -->
-			<main class="main">
-					<!-- Navegation for l-aside and r-aside -->
-					<nav class="top-nav-laterals"></nav>
-					<!-- Sections -->
-					<section class="default-section">
+	<!-- Header -->
+	<header class="header">
+	</header>
 
-						<article class="default__reminder-container default-containers">
-							<header class="default__reminder-header">
-								<span> DAILY REMINDERS </span>
-							</header>
-							<div class="default__reminder-body">
-								<div>
-									<span id="quote-1">
-									</span>
-								</div>
-								<div>
-									<span id="quote-2">
-									</span>
-								</div>
-								<div>
-									<span id="quote-3">
-									</span>
-								</div>
+	<div id="body">
+		<!-- Left-Aside -->
+		<aside class="l-aside">
+			<button class="l-aside__button">
+				<img src="assets/img/right-arrow.png">
+			</button>	
+		</aside>
+
+		<!-- Where sections are displayed -->
+		<main class="main">
+				<!-- Navegation for l-aside and r-aside -->
+				<nav class="top-nav-laterals"></nav>
+
+				<!-- Sections -->
+				<section class="default-section">
+					<article class="default__reminder-container default-containers">
+						<header class="default__reminder-header">
+							<span> LOREM IPSUM </span>
+						</header>
+						<div class="default__reminder-body">
+							<div>
+								<span id="quote-1">
+								</span>
 							</div>
-						</article>
-
-						<article class="default__tasking-container default-containers">
-							<header class="default__tasking-header">
-								<span>TODAY'S TASKS</span>
-							</header>
-							<div class="default__tasking-body">
+							<div>
+								<span id="quote-2">
+								</span>
 							</div>
-						</article>
-
-						<article class="default__status-container default-containers">
-							<header class="default__status-header">
-								<span>GENERAL STATUS</span>
-							</header>
-							<div class="default__status-body">
-								<span>In development</span>
+							<div>
+								<span id="quote-3">
+								</span>
 							</div>
-						</article>
+						</div>
+					</article>
+					<article class="default__tasking-container default-containers">
+						<header class="default__tasking-header">
+							<span>LOREM IPSUM</span>
+						</header>
+						<div class="default__tasking-body">
+						</div>
+					</article>
 
-					</section>
-			</main>
-			<!-- Right-Aside -->
-			<aside class="r-aside">
-				<button class="r-aside__button">
-					<img src="assets/img/left-arrow.png">
+					<article class="default__status-container default-containers">
+						<header class="default__status-header">
+							<span>LOREM IPSUM</span>
+						</header>
+						<div class="default__status-body">
+							<span>In development</span>
+						</div>
+					</article>
+				</section>
+		</main>
+
+		<!-- Right-Aside -->
+		<aside class="r-aside">
+			<button class="r-aside__button">
+				<img src="assets/img/left-arrow.png">
+			</button>
+			<div class="r-aside__body">
+				<button class="r-aside__section">
+					<span>exmp-0</span>
 				</button>
-				<!-- Buttons for sections -->
-				<div class="r-aside__body">
-					<button class="r-aside__section">
-						<span>exmp-0</span>
-					</button>
-					<button class="r-aside__section">
-						<span>exmp-1</span>
-					</button>
-					<button class="r-aside__section">
-						<span>exmp-2</span>
-					</button>
-				</div>
-			</aside>
-		</div>
-    </div>
-	<script type="text/javascript" src="scripts/main.js"></script>
-	<script type="text/javascript" src="scripts/debug_main.js"></script>
-	<script type="text/javascript" src="scripts/debug_default.js"></script>
+				<button class="r-aside__section">
+					<span>exmp-1</span>
+				</button>
+				<button class="r-aside__section">
+					<span>exmp-2</span>
+				</button>
+			</div>
+		</aside>
+
+	</div>
+
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/r-aside.js"></script>
+	<script type="text/javascript" src="js/l-aside.js"></script>
+	<script type="text/javascript" src="js/debug_main.js"></script>
+	<script type="text/javascript" src="default-section/js/debug_default.js"></script>
 </body>
 </html>

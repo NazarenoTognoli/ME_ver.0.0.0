@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Noto Sans Mono';
+    src: url('../prototypes/notosansmono/NotoSansMono-VariableFont_wdth,wght.ttf');
+}
+:root {
+    --dark1: #131213;
+    --dark2: #201F20;
+    --dark3: #292829;
+    --dark4: #363537;
+    --white: #F2F1F2;
+    --aqua1: #018473;
+    --aqua2: #41D5C4;
+    --aqua2-5: #5AE9E6;
+    --aqua3: #6FECDA;
+}
