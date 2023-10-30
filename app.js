@@ -3,13 +3,12 @@ const fs = require('fs');
 const app = express();
 let defaultView;
 try {
-	//se toma referencia desde la raíz cuando se usa nodemon
-  defaultView = fs.readFileSync('./src/views/default.html', 'utf8');
-  console.log("File Succesfully Readed");
+  defaultView = fs.readFileSync('./views/default.html', 'utf8');
+  console.log("File Succesfully Readed (defaultView)");
 } catch (error) {
   console.error('Error al leer el archivo:', error);
 }
-app.use(express.static('./src/public'));
+app.use(express.static('./public'));
 app.post('/default', (req, res) => {
 	res.json(defaultView);
 });

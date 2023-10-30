@@ -9,4 +9,4 @@ debug_*
 temp_*
 
 #Ignorar archivos de propotipos de diseño
-src/public/prototipos/
+/public/prototipos/
