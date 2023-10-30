@@ -13,3 +13,7 @@
     --aqua2-5: #5AE9E6;
     --aqua3: #6FECDA;
 }
+.section {
+    height: calc(100vh - 20px - 40px);
+    width: 100%;
+}

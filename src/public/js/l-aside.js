@@ -7,7 +7,7 @@ function lButtonFunc() {
 		mainDOM[".r-aside"].style.flex = "0";
 		mainDOM[".l-aside__button img"].style.transform = "scaleX(-1)";
 		mainDOM[".r-aside__button img"].style.transform = "scaleX(1)";
-		for (let i = 0; i < mainDOM[".r-aside__section span"].length; i++) {
+		for (let i = 0; i < mainDOM[".r-aside__section"].length; i++) {
 			mainDOM[".r-aside__section"][i].style.opacity = "0";
 		}
 	}
@@ -16,7 +16,7 @@ function lButtonFunc() {
 		mainDOM[".r-aside"].style.flex = "0";
 		mainDOM[".main"].style.flex = "1";
 		mainDOM[".l-aside__button img"].style.transform = "scaleX(1)";
-		for (let i = 0; i < mainDOM[".r-aside__section span"].length; i++) {
+		for (let i = 0; i < mainDOM[".r-aside__section"].length; i++) {
 			mainDOM[".r-aside__section"][i].style.opacity = "0";
 		}
 	}

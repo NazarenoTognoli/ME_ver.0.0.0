@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server src/public",
-    "dev": "nodemon server/app.js"
+    "dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",

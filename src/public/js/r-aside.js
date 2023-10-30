@@ -7,7 +7,8 @@ function rButtonFunc() {
 		mainDOM[".l-aside"].style.flex = "0";
 		mainDOM[".r-aside__button img"].style.transform = "scaleX(-1)";
 		mainDOM[".l-aside__button img"].style.transform = "scaleX(1)";
-		for (let i = 0; i < mainDOM[".r-aside__section span"].length; i++) {
+		//r-aside content appearing
+		for (let i = 0; i < mainDOM[".r-aside__section"].length; i++) {
 			mainDOM[".r-aside__section"][i].style.opacity = "1";
 		}
 	}
@@ -16,7 +17,8 @@ function rButtonFunc() {
 		mainDOM[".l-aside"].style.flex = "0";
 		mainDOM[".main"].style.flex = "1";
 		mainDOM[".r-aside__button img"].style.transform = "scaleX(1)";
-		for (let i = 0; i < mainDOM[".r-aside__section span"].length; i++) {
+		//r-aside content disappearing
+		for (let i = 0; i < mainDOM[".r-aside__section"].length; i++) {
 			mainDOM[".r-aside__section"][i].style.opacity = "0";
 		}
 	}
@@ -24,8 +26,8 @@ function rButtonFunc() {
 
 //Right Aside Buttons Logic
 function rAsideBTN () {
-  for (let i = 0; i < mainDOM[".r-aside__section"].length; i++) {
-  	mainDOM[".r-aside__section"][i].classList.remove("r-aside__section--active");
+  for (let i = 0; i < document.querySelectorAll(".r-aside__section--active").length; i++) {
+  	document.querySelectorAll(".r-aside__section--active")[i].classList.remove("r-aside__section--active");
   }
   this.classList.add("r-aside__section--active");
 }
