@@ -1,5 +1,6 @@
+
 let defaultDOM = {};
-let defaultLoadedDOM = new booleanListener();
+
 fetch('http://localhost:5000/default/', {method: 'post'})
 .then(response => {
 	if (!response.ok) {
