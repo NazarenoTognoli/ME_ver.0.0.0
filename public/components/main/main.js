@@ -9,7 +9,8 @@ createDOM(
   	".r-aside",
   	".main",
   	".l-aside__button img",
-		".r-aside__button img",
+	".r-aside__button img",
+	"head"
 );
 
 //Todos los elementos

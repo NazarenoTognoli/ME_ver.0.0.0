@@ -27,11 +27,24 @@ class booleanListener {
     this.listenersT.push(callback);
   }
   dispatchEvent() {
-    if (this.value) { 
+    if (this.value) {
       this.listenersT.forEach(callback => callback());
-    }
-    else {
+    }else {
       this.listenersF.forEach(callback => callback());  
-    } 
+    }
   } 
+}
+//Carga de CSS bajo demanda
+function loadCSS(load, identifier, href = undefined) {
+  if (load) {
+    let link = document.createElement("link");
+    link.classList.add(identifier);
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = href;
+    mainDOM["head"].appendChild(link);  
+  } else {
+    let link = document.querySelector("." + identifier);
+    mainDOM["head"].removeChild(link);  
+  }
 }

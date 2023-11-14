@@ -5,4 +5,4 @@ let asideButtonFunctionsLoaded = new booleanListener();
 
 // Default View 
 
-let defaultLoadedDOM = new booleanListener();
+let defaultViewLoaded = new booleanListener();

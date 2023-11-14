@@ -95,14 +95,14 @@
 .default__tasking-body:hover::-webkit-scrollbar-thumb {
 	background: var(--dark4);
 }
-.default__tasking-body .dtcb__div {
+.default__tasking-body .default__tasking-body-div {
 	width: 90%;
 	height: 20%;
 	background: var(--dark4);
 	margin-top: 22px;
 	border-radius: 3px;
 }
-.dtcb__div:last-child {
+.default__tasking-body-div:last-child {
 	margin-bottom: 22px;
 }
 /*------------------ Status-Article -------------------*/
