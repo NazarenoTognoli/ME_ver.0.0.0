@@ -1,4 +1,4 @@
-
+let flag = false;
 let defaultDOM = {};
 let createDefaultDOM = () => {
 	createDOM(
@@ -16,6 +16,7 @@ let loadDefaultCSS = () => {
 defaultViewLoaded.addEventListenerT(createDefaultDOM);
 defaultViewLoaded.addEventListenerT(loadDefaultCSS);
 defaultViewLoaded.addEventListenerT(debugDefault);
+flag ?
 fetch('http://localhost:5000/default/', {method: 'post'})
 .then(response => {
 	if (!response.ok) {
@@ -32,4 +33,4 @@ fetch('http://localhost:5000/default/', {method: 'post'})
 })
 .catch(error => {
 	console.log('Se produjo un error: ' + error);
-})
+}) : console.log("default view not executed");

@@ -3,26 +3,43 @@
     display: flex;
     position: relative;
     flex: 0;
+/*width: 150px;*/
+/*    width: 150px;*/
+    max-width: 500px;
+
     height: 100%;
     background: var(--dark3);
     transition: flex .3s ease;
+    flex-wrap: nowrap;
+}
+.r-aside__resize-bar {
+    background: var(--dark2);
+    flex-basis: 7px;
+    cursor: col-resize;
 }
 .r-aside__body {
+    display: flex;
+    position: relative;
     height: 100%;
+    flex-basis: 100%;
+    background: var(--dark3);
+    transition: flex .3s ease;
+    flex-wrap: wrap;
+}
+.r-aside__section-body, .r-aside__subsection-body {
+    height: 50%;
     width: 100%;
     display: inherit;
     justify-content: center;
     flex-wrap: wrap;
     align-content: flex-start;
-
 }
-.r-aside__section {
+.r-aside__section, .r-aside__subsection {
     flex-basis: 100%;
-    height: 6%;
+    height: 12%;
     margin-top: 4px;
     border-radius: 2px;
     font-size: 12px;
-    padding-left: 4px;
     display: inherit;
     align-items: center;
     font-family: 'Noto Sans Mono';
@@ -33,24 +50,50 @@
     transition: opacity .2s ease;
     position: relative;
     overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
 }
-.r-aside__section:first-child {
+.r-aside__section:before, .r-aside__subsection:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 50%, var(--dark3) 100%);
+    z-index: 100;
+}
+.r-aside__button {
+    left: 0;
+    transform: translateX(-20px);
+    box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+.r-aside__section:first-child, .r-aside__subsection:first-child {
     margin-top: 0;
 }
-.r-aside__section span {
-    display: inline;
+.r-aside__section > span, .r-aside__subsection > span {
     position: absolute;
+    padding-left: 4px;
 }
-.r-aside__section--active {
-    background: var(--dark2);
-    color: var(--aqua3);
-    border-left: 2px solid var(--aqua3);
-    padding-left: 2px;
-}
-.r-aside__section:hover {
+.r-aside__section:hover, .r-aside__subsection:hover {
     color: #aaa;
 }
+/* Interaction */
+.r-aside__section--active {
+    background: var(--dark2);
+    color: var(--aqua4);
+    border-left: 2px solid var(--aqua4);
+}
+.r-aside__section--active > span {
+    padding-left: 2px;
+}
 .r-aside__section--active:hover {
-    color: var(--aqua3);
+    color: var(--aqua4);
+}
+
+/*-------------- SUBSECTION -------------*/
+
+.r-aside__subsection-body {
+    border-top: 2px solid var(--dark2);
+    height: calc(50% - 2px);
 }

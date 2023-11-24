@@ -1,0 +1,12 @@
+button {
+    all: unset;
+}
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 1fr;
+    grid-template-areas:
+        "header"
+        "container";
+    height: 100vh;
+}

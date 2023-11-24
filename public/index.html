@@ -6,15 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="utils/normalize.css">
 	<link rel="stylesheet" type="text/css" href="utils/shared.css">
+	<link rel="stylesheet" type="text/css" href="components/shared/components-shared.css">
+	<link rel="stylesheet" type="text/css" href="components/header/header.css">
 	<link rel="stylesheet" type="text/css" href="components/main/main.css">
 	<link rel="stylesheet" type="text/css" href="components/left-aside/l-aside.css">
 	<link rel="stylesheet" type="text/css" href="components/right-aside/r-aside.css">
+	<link rel="stylesheet" type="text/css" href="sections/ish-view/ish.css">
 </head>
 <body>
 	<!-- Header -->
 	<header class="header">
 	</header>
-
 	<div id="body">
 		<!-- Left-Aside -->
 		<aside class="l-aside">
@@ -22,12 +24,28 @@
 				<img src="assets/img/right-arrow.png">
 			</button>	
 		</aside>
-
 		<!-- Where sections are displayed -->
 		<main class="main">
 				<!-- Navegation for l-aside and r-aside -->
 				<nav class="top-nav-laterals"></nav>
 				<!-- Sections -->
+				<section class="ISH-section section">
+					<header>
+						<div class="search-input">	
+							<div class="search-input__state"></div>
+							<input class="search-input__input" type="text" name="" placeholder="Search">
+						</div>
+						<div class="add-item">
+							<div class="add-item__state"></div>
+							<input type="text" name="" class="add-item__input" placeholder="Drop Link Here">
+							<button class="add-item__button"></button>
+						</div>
+						<button class="edit-group-button"></button>
+						<button class="add-new-group-button"></button>
+					</header>
+					<main>
+					</main>
+				</section>
 		</main>
 
 		<!-- Right-Aside -->
@@ -35,16 +53,36 @@
 			<button class="r-aside__button">
 				<img src="assets/img/left-arrow.png">
 			</button>
+			<div class="r-aside__resize-bar"></div>
 			<div class="r-aside__body">
-				<button class="r-aside__section">
-					<span>exmp-0</span>
-				</button>
-				<button class="r-aside__section">
-					<span>exmp-1</span>
-				</button>
-				<button class="r-aside__section">
-					<span>exmp-2</span>
-				</button>
+				<div class="r-aside__section-body">
+					<button class="r-aside__section">
+						<span>exmp-0</span>
+					</button>
+					<button class="r-aside__section">
+						<span>exmp-1</span>
+					</button>
+					<button class="r-aside__section">
+						<span>exmp-2</span>
+					</button>
+				</div>
+				<div class="r-aside__subsection-body">
+					<button class="r-aside__subsection">
+						<span>Uncategorized</span>
+					</button>
+					<button class="r-aside__subsection">
+						<span>exmp-0</span>
+					</button>
+					<button class="r-aside__subsection">
+						<span>exmp-1</span>
+					</button>
+					<button class="r-aside__subsection">
+						<span>exmp-2</span>
+					</button>
+					<button class="r-aside__subsection">
+						<span>exmp-3</span>
+					</button>
+				</div>	
 			</div>
 		</aside>
 
@@ -53,6 +91,7 @@
 	<script type="text/javascript" src="utils/shared.js"></script>
 	<script type="text/javascript" src="utils/event-planner.js"></script>
 
+	<script type="text/javascript" src="components/header/header.js"></script>
 	<script type="text/javascript" src="components/main/main.js"></script>
 	<script type="text/javascript" src="components/shared/aside-functions.js"></script>
 	<script type="text/javascript" src="components/right-aside/r-aside.js"></script>
@@ -60,6 +99,9 @@
 
 	<script type="text/javascript" src="sections/default-view/debug_default.js"></script>
 	<script type="text/javascript" src="sections/default-view/default.js"></script>
+
+	<script type="text/javascript" src="sections/ISH-view/debug_ISH.js"></script>
+	<script type="text/javascript" src="sections/ISH-view/ISH.js"></script>
 
 </body>
 </html>

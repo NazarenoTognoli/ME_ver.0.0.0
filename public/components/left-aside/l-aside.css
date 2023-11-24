@@ -31,11 +31,6 @@
     transform: translateX(20px);
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
-.r-aside__button {
-    left: 0;
-    transform: translateX(-20px);
-    box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
-}
 .l-aside__button:hover img, .r-aside__button:hover img {
     filter: invert(70%);
 }

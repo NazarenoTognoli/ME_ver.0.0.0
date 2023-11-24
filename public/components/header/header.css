@@ -1,0 +1,10 @@
+.header {
+    grid-area: header;
+    background: var(--dark4);
+    color: #fff;
+    box-shadow: 0px 1px 12px -1px rgba(0,0,0,.3);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

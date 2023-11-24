@@ -2,18 +2,39 @@
     font-family: 'Noto Sans Mono';
     src: url('../prototypes/notosansmono/NotoSansMono-VariableFont_wdth,wght.ttf');
 }
+@font-face {
+    font-family: 'Major Mono Display';
+    src: url('../prototypes/majormonodisplay/MajorMonoDisplay-Regular.ttf');
+}
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../prototypes/orbitron/Orbitron-VariableFont_wght.ttf');
+}
 :root {
     --dark1: #131213;
     --dark2: #201F20;
     --dark3: #292829;
     --dark4: #363537;
+    --dark5: #797979;
     --white: #F2F1F2;
+    --white2: #c2c2c2;
     --aqua1: #018473;
     --aqua2: #41D5C4;
     --aqua2-5: #5AE9E6;
     --aqua3: #6FECDA;
+    --aqua4: #a3d9d7;
 }
 .section {
     height: calc(100vh - 20px - 40px);
+/*    height: 100%;*/
     width: 100%;
+}
+input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
 }

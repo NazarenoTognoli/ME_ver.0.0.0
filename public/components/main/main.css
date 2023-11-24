@@ -1,36 +1,16 @@
-button {
-    all: unset;
-}
-body {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 40px 1fr;
-    grid-template-areas:
-        "header"
-        "container";
-    height: 100vh;
-}
-.header {
-    grid-area: header;
-    background: var(--dark4);
-    color: #fff;
-    box-shadow: 0px 1px 12px -1px rgba(0,0,0,.3);
-    z-index: 1;
-    display: flex;
-    align-items: center;
-}
 #body {
     grid-area: container;
     background-color: #555;
     display: flex;
     position: relative;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+/*    height: calc(100% + 20px);*/
 }
 .main {
     display: flex;
     position: relative;
     flex: 1;
-    height: calc(100vh - 40px);
+/*    height: calc(100vh - 40px);*/
     background: var(--dark1);
     transition: flex .3s ease;
     flex-wrap: wrap;
