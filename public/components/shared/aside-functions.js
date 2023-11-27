@@ -37,9 +37,12 @@ function adjustImgInversion(left, right) {
 function rAsideButtonDisappear(hide) {
 	mainDOM[".r-aside__section"].forEach(element => {
 		element.style.opacity = hide ? "0" : "1";
-		element.style.cursor = hide ? "default" : "pointer"});
+		element.style.cursor = hide ? "default" : "pointer";
+	});
 	let active = document.querySelector(".r-aside__section--active");
 	let activeSpan = document.querySelector(".r-aside__section--active > span");
-	active !== null ? active.style.borderLeft = hide ? "none" : "2px solid var(--aqua4)" : console.log("");
-	activeSpan !== null ? activeSpan.style.paddingLeft = hide ? "4px" : "2px" : console.log(""); 
+	if (active !== null) {	
+		active.style.borderLeft = hide ? "none" : "2px solid var(--aqua4)";
+		activeSpan.style.paddingLeft = hide ? "4px" : "2px";
+	}
 }

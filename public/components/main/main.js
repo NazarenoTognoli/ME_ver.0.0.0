@@ -10,7 +10,8 @@ createDOM(
   	".main",
   	".l-aside__button img",
 	".r-aside__button img",
-	"head"
+	"head",
+	".r-aside__resize-bar"
 );
 
 //Todos los elementos
@@ -19,4 +20,5 @@ createDOM(
 	true,
 	".r-aside__section",
 	".r-aside__section span",
+	".r-aside__section--active"
 );

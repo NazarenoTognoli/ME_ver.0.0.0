@@ -5,7 +5,7 @@ function toggleLeftAsideState() {
 	let active = "0 1 0%";
 
 	if (flexSize === active) {
-		adjustFlexSizes("4", "1", "0");
+		adjustFlexSizes("7.2", "1.8", "0");
 		adjustImgInversion("-1", "1");
 	}
 	else {

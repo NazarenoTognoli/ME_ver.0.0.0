@@ -3,14 +3,12 @@
     display: flex;
     position: relative;
     flex: 0;
-/*width: 150px;*/
-/*    width: 150px;*/
-    max-width: 500px;
-
+    max-width: 350px;
     height: 100%;
     background: var(--dark3);
     transition: flex .3s ease;
     flex-wrap: nowrap;
+    user-select: none;
 }
 .r-aside__resize-bar {
     background: var(--dark2);

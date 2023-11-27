@@ -5,88 +5,65 @@
 	align-items: flex-start;
 	max-height: calc(100vh - 20px - 40px);
 }
+/*<<<<<<<<<<<<<<<<<<<< HEADER >>>>>>>>>>>>>>>>>>>>>>>*/
+
 .ISH-section > header {
 	width: 98%;
 	margin-top: 15px;
-/*	border-top: 15px solid var(--dark1);*/
 	background: var(--dark3);
 	display: flex;
 	align-items: center;
 	height: 46px;
 }
-/*.ISH-section > main > header::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  height: 100%;
-  background: red;
-  filter: opacity(0.5) blur(5px);
-}*/
-.ISH-section > header > button, .ISH-section > header > div {
-	min-height: 38px;
+/*-------- All children height -----------------*/
+.ISH-section > header button, 
+.ISH-section > header div {
+	height: 34.69px;
 } 
-.ISH-section > header .add-item__input::placeholder, .ISH-section > header .search-input__input::placeholder {
+/*-------- Inputs placeholders -----------------*/
+.ISH-section > header .add-item__input::placeholder, 
+.ISH-section > header .search-input__input::placeholder {
 	font-family: Noto Sans Mono;
 	color: var(--dark5);
 	overflow-x: hidden;
 }
-.ISH-section > header .add-item__input, .ISH-section > header .search-input__input {
+/*-------- All header Inputs -----------------*/
+.ISH-section > header .add-item__input, 
+.ISH-section > header .search-input__input {
 	color: var(--white);
 	font-family: Noto Sans Mono;
 	font-size: 18px;
 	padding-left: 20px;
 }
-.ISH-section > main {
-	width: calc(100% - 1%);
-/*	height: auto;*/
-	height: calc(100vh - 20px - 40px - 15px - 46px - 15px - 15px);
-	display: flex;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-content: flex-start;
-	overflow-y: auto;
-	margin-right: 1%;
-}::-webkit-scrollbar {
-	width: 10px;
-}::-webkit-scrollbar-thumb {
-	background: transparent;
-	background: var(--dark4);
-}
+/*-------- Search Input -----------------*/
 .search-input {
 	flex-basis: 25%;
 	display: inherit;
 	margin-left: 1%;
-	min-height: 34px !important;
-	height: calc(6vh - 4px);
 	outline: 2px solid var(--dark4);
 }
 .search-input__state {
-	min-width: 3px;
+	width: 3px;
 	height: 100%;
 	background: var(--dark4);
 }
 .search-input.focused .search-input__state {
-    /* Estilos cuando el input está enfocado */
-    background: var(--aqua4);
+  background: var(--aqua4);
 }
 .search-input__input {
 	flex-basis: 100%;
 	height: 100%;
 }
+/*-------- Add Item Input and Button -----------------*/
 .add-item {
 	flex-basis: 50%;
-	min-height: 34px !important;
 	display: flex;
 	margin-left: auto;
-	height: calc(6vh - 4px);
 	margin-right: auto;
 	outline: 2px solid var(--dark4);
 }
 .add-item__state {
-	min-width: 3px;
+	width: 3px;
 	height: 100%;
 	background: var(--dark4);
 }
@@ -104,18 +81,41 @@
 	height: 100%;
 	background: var(--dark4);
 }
+/*-------- Edit Items Button -----------------*/
 .edit-group-button {
 	flex-basis: 10%;
-	height: 6vh;
 	background: var(--dark4);
 	margin-right: auto;
+	border-width: 2px 0 2px 0;
+	border-style: solid;
+	border-color: var(--dark4);
 }
+/*-------- Edits groups Button -----------------*/
 .add-new-group-button {
-	flex-basis: 6vh;
-	height: 6vh;
 	background: var(--dark4);
 	margin-right: 1%;
-	min-width: 38px;
+	width: 38px;
+	border-width: 2px 0 2px 0;
+	border-style: solid;
+	border-color: var(--dark4);
+}
+/*<<<<<<<<<<<<<<<<< MAIN >>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.ISH-section > main {
+	width: calc(100% - 1%);
+	height: calc(100vh - 20px - 40px - 15px - 46px - 15px - 15px);
+	display: flex;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: flex-start;
+	overflow-y: auto;
+	margin-right: 1%;
+}::-webkit-scrollbar {
+	width: 10px;
+}::-webkit-scrollbar-thumb {
+	background: transparent;
+	background: var(--dark4);
 }
 .source-item {
 	margin-top: 15px;
@@ -140,7 +140,6 @@
 	background: var(--dark3);
 	max-width: 3fr;
 	font-size: 25px;
-/*	line-height: 1.7;*/
 	color: var(--white2);
 	position: relative;
 	z-index: 20;
@@ -155,7 +154,6 @@
 .source-item > .name:hover {
 	color: var(--aqua4);
 	color: var(--white);
-/*	text-shadow: 0px 0px 7px var(--aqua4);*/
 	cursor: pointer;
 	border-color: var(--dark3);
 	transform: translate(-1px, -1px);
@@ -167,7 +165,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.28);	
+	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.28);
 	position: relative;
 	z-index: 10;
 }
@@ -182,6 +180,7 @@
 	color: var(--dark1);
 	min-height: 19px;
 	min-width: 19px;
+	user-select: none;
 }
 .source-item > .info > .type {
 	color: var(--aqua4);
