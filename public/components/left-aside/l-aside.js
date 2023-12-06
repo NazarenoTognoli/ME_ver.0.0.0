@@ -1,15 +1,16 @@
 //Left Aside Logic
 function toggleLeftAsideState() {
 
+	minWidthRightAside(false);
 	let flexSize = window.getComputedStyle(mainDOM[".l-aside"]).getPropertyValue('flex');
 	let active = "0 1 0%";
 
 	if (flexSize === active) {
-		adjustFlexSizes("7.2", "1.8", "0");
+		adjustFlexSizes(mainFlexLeft, lAsideFlexLeft, rAsideFlexLeft);
 		adjustImgInversion("-1", "1");
 	}
 	else {
-		adjustFlexSizes("1", "0", "0");
+		adjustFlexSizes("9", "0", "0");
 		adjustImgInversion("1", "1");
 	}
 	rAsideButtonDisappear(true);

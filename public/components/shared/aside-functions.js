@@ -1,4 +1,4 @@
-
+let rAsideFlag;
 //User Interaction
 
 asideButtonFunctionsLoaded.addEventListenerT(function() {
@@ -16,6 +16,15 @@ asideButtonFunctionsLoaded.addEventListenerT(function() {
 	});
 });
 
+//Components Sizes
+
+let rAsideFlexRight = "1";
+let mainFlexRight = "8";
+let lAsideFlexRight = "0";
+
+let rAsideFlexLeft = "0";
+let mainFlexLeft = "7.2";
+let lAsideFlexLeft = "1.8";
 
 //Adjust Sizes For Main, Right Aside and Left Aside when the User Interacts
 
@@ -33,16 +42,25 @@ function adjustImgInversion(left, right) {
 }
 
 //Right Aside Button Styles Disappearing
-
-function rAsideButtonDisappear(hide) {
-	mainDOM[".r-aside__section"].forEach(element => {
-		element.style.opacity = hide ? "0" : "1";
+let subsectionActiveStyle = {saved: undefined, element: 'r-aside__subsection--active'}
+let sectionActiveStyle = {saved: undefined, element: 'r-aside__section--active'}
+function rAsideButtonDissapearLogic(sections, active, hide) {
+	mainDOM[sections].forEach(element => {
+		//element.style.opacity = hide ? "0" : "1";
 		element.style.cursor = hide ? "default" : "pointer";
+		if (element.classList.contains(active.element) && hide) {
+			active.saved = element;
+			element.classList.remove(active.element);
+		}
+		if (active.saved !== undefined && !hide) {
+			active.saved.classList.add(active.element);
+		}
 	});
-	let active = document.querySelector(".r-aside__section--active");
-	let activeSpan = document.querySelector(".r-aside__section--active > span");
-	if (active !== null) {	
-		active.style.borderLeft = hide ? "none" : "2px solid var(--aqua4)";
-		activeSpan.style.paddingLeft = hide ? "4px" : "2px";
-	}
+}
+function rAsideButtonDisappear(hide) {
+	rAsideButtonDissapearLogic(".r-aside__section", sectionActiveStyle, hide);
+	rAsideButtonDissapearLogic(".r-aside__subsection", subsectionActiveStyle, hide);
+}
+function minWidthRightAside(value) {
+	mainDOM[".r-aside"].style.minWidth = value ? "6.94px" : "0";
 }

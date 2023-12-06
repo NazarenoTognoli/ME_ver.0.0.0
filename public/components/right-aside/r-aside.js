@@ -1,87 +1,70 @@
+
 //Right Aside Logic
 function toggleRightAsideState() {
 	let rAsideFlexVal = window.getComputedStyle(mainDOM[".r-aside"]).getPropertyValue('flex');
 	if (rAsideFlexVal === "0 1 0%") {
-		adjustFlexSizes("8", "0", "1");
+    minWidthRightAside(true);
+		adjustFlexSizes(mainFlexRight, "0", rAsideFlexRight);
 		adjustImgInversion("1", "-1");
 		rAsideButtonDisappear(false);
 	}
 	else {
-		adjustFlexSizes("1", "0", "0");
+    minWidthRightAside(false);
+		adjustFlexSizes("9", "0", "0");
 		adjustImgInversion("1", "1");
 		rAsideButtonDisappear(true);
 	}
 }
 
-//Right Aside Buttons Logic
-function rAsideButton() {
-	//Active Style
-  let active = document.querySelector(".r-aside__section--active");
-  if (active !== null) {
-    active.style.borderLeft = "none";
-  }
+//Right Aside Section Buttons Active Styles
+function rAsideSectionButton() {
+  //Change styles classes
   document.querySelectorAll(".r-aside__section--active").forEach(elemento => elemento.classList.remove("r-aside__section--active"));
   this.classList.add("r-aside__section--active");
-  document.querySelector(".r-aside__section--active").style.borderLeft = "2px solid var(--aqua4)";
 }
-//Activate each right aside button
-mainDOM[".r-aside__section"].forEach(elemento => elemento.addEventListener('click', rAsideButton))
+//Activate each right aside button styles
+mainDOM[".r-aside__section"].forEach(elemento => elemento.addEventListener('click', rAsideSectionButton))
 
 
-
-
-
-
-//RESIZING RIGHT ASIDE
-
-let rAsideIsResizing = false;
-let rAsideStartPositionClientX = 0;
-let rAsideOriginalWidth = 0;
-let mainOriginalWidth = 0;
-
-mainDOM[".r-aside__resize-bar"].addEventListener('mousedown', rAsideStartResize);
-
-function rAsideStartResize(event) {
-  document.addEventListener('mousemove', rAsideResize);
-  document.addEventListener('mouseup', rAsideStopResize);
-
-  rAsideIsResizing = true;
-  rAsideStartPositionClientX = event.clientX;
-
-  document.body.style.userSelect = 'none';
-
-  rAsideOriginalWidth = mainDOM[".r-aside"].offsetWidth;
-  mainOriginalWidth = mainDOM[".main"].offsetWidth;
-
-  mainDOM[".r-aside"].style.transition = "none";
-  mainDOM[".main"].style.transition = "none";
+//Right Aside Subsection Buttons Active Styles
+function rAsideSubsectionButton() {
+  //Change styles classes
+  document.querySelectorAll(".r-aside__subsection--active").forEach(elemento => elemento.classList.remove("r-aside__subsection--active"));
+  this.classList.add("r-aside__subsection--active");
 }
+//Activate each right aside button styles
+mainDOM[".r-aside__subsection"].forEach(elemento => elemento.addEventListener('click', rAsideSubsectionButton));
 
 
-function rAsideResize(event) {
-  if (rAsideIsResizing) {
+//Resize Event for Right Aside
+applyResizeEvent("x", "oposite", ".r-aside__resize-bar", ".r-aside",
+  (e)=>{
+    document.body.style.userSelect = 'none';
+    mainDOM[".r-aside"].style.transition = "none";
+    mainDOM[".main"].style.transition = "none";
+  },
+  (e)=>{
 
-    const rAsideWidth = rAsideOriginalWidth - (event.clientX - rAsideStartPositionClientX);
+    const rAsideWidth = e.originalSizeWidth - (event.clientX - e.startPositionX);
     const mainWidth = window.innerWidth - mainDOM[".r-aside"].offsetWidth;
 
-    const rAsideFlex = (rAsideWidth / window.innerWidth) * 100 / 9;
-    const mainFlex = (mainWidth / window.innerWidth) * 100 / 9;
+    rAsideFlexRight = (rAsideWidth / window.innerWidth) * 100 / 9;
+    mainFlexRight = (mainWidth / window.innerWidth) * 100 / 9;
 
-    adjustFlexSizes(mainFlex, "0", rAsideFlex);
-
+    adjustFlexSizes(mainFlexRight, "0", rAsideFlexRight);
+  },
+  (e)=>{
+    document.body.style.userSelect = '';
+    mainDOM[".r-aside"].style.transition = "flex .3s ease";
+    mainDOM[".main"].style.transition = "flex .3s ease";
   }
-}
-function rAsideStopResize() {
-  document.removeEventListener('mousemove', rAsideResize);
-  document.removeEventListener('mouseup', rAsideStopResize);
-
-  rAsideIsResizing = false;
-
-  rAsideOriginalWidth = mainDOM[".r-aside"].offsetWidth;
-  mainOriginalWidth = mainDOM[".main"].offsetWidth;
-  
-  document.body.style.userSelect = '';
-
-  mainDOM[".r-aside"].style.transition = "flex .3s ease";
-  mainDOM[".main"].style.transition = "flex .3s ease";
-}
+);
+//Section Flags
+// let sections = {
+//     default: false,
+//     ish: false
+// }
+// mainDOM[".insoha-btn"].addEventListener('click', function() {
+//   sections.ish = true;
+//   console.log(sections);
+// });

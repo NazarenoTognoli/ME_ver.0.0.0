@@ -1,0 +1,20 @@
+/*<<<<<<<<<<<<<<<<< MAIN >>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.ISH-section > main {
+/*	width: calc(100% - 1%);*/
+width: calc(100%);
+	height: calc(100vh - 20px - 40px - 15px - 46px - 15px - 15px);
+	display: flex;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: flex-start;
+	overflow-y: auto;
+	margin-right: 1%;
+}::-webkit-scrollbar {
+	width: 10px;
+	padding-left: 1%;
+}::-webkit-scrollbar-thumb {
+	background: transparent;
+	background: var(--dark4);
+}
