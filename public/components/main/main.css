@@ -4,13 +4,13 @@
     display: flex;
     position: relative;
     flex-wrap: nowrap;
-/*    height: calc(100% + 20px);*/
+    height: 100%;
 }
 .main {
     display: flex;
     position: relative;
     flex: 1;
-/*    height: calc(100vh - 40px);*/
+    height: calc(100vh - 40px);
     background: var(--dark1);
     transition: flex .3s ease;
     flex-wrap: wrap;

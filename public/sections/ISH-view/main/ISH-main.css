@@ -1,7 +1,7 @@
 /*<<<<<<<<<<<<<<<<< MAIN >>>>>>>>>>>>>>>>>>>>>>>>>>*/
 .ISH-section > main {
 /*	width: calc(100% - 1%);*/
-width: calc(100%);
+	width: calc(100%);
 	height: calc(100vh - 20px - 40px - 15px - 46px - 15px - 15px);
 	display: flex;
 	margin-top: 15px;

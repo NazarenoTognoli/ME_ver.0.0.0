@@ -110,6 +110,7 @@ function applyResizeEvent(axisParam, directionParam, resizeElementParam, element
     e.originalSizeWidth = e.element.offsetWidth;
     e.originalSizeHeight = e.element.offsetHeight;
     startActions(e);
+    document.body.style.userSelect = 'none';
   }
   //============================================================================================================================================================================
   function resize() {
@@ -128,5 +129,6 @@ function applyResizeEvent(axisParam, directionParam, resizeElementParam, element
     e.originalSizeWidth = e.element.offsetWidth;
     e.originalSizeHeight = e.element.offsetHeight;
     stopActions(e);
+    document.body.style.userSelect = '';
   }
 }

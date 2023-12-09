@@ -45,6 +45,8 @@ function adjustImgInversion(left, right) {
 let subsectionActiveStyle = {saved: undefined, element: 'r-aside__subsection--active'}
 let sectionActiveStyle = {saved: undefined, element: 'r-aside__section--active'}
 function rAsideButtonDissapearLogic(sections, active, hide) {
+	mainDOM[".r-aside__subsection-body > .content"].style.marginRight = hide ? "0" : "5px";
+	mainDOM[".r-aside__section-body"].style.marginRight = hide ? "0" : "5px";
 	mainDOM[sections].forEach(element => {
 		//element.style.opacity = hide ? "0" : "1";
 		element.style.cursor = hide ? "default" : "pointer";

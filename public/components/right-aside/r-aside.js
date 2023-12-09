@@ -39,7 +39,6 @@ mainDOM[".r-aside__subsection"].forEach(elemento => elemento.addEventListener('c
 //Resize Event for Right Aside
 applyResizeEvent("x", "oposite", ".r-aside__resize-bar", ".r-aside",
   (e)=>{
-    document.body.style.userSelect = 'none';
     mainDOM[".r-aside"].style.transition = "none";
     mainDOM[".main"].style.transition = "none";
   },
@@ -54,17 +53,58 @@ applyResizeEvent("x", "oposite", ".r-aside__resize-bar", ".r-aside",
     adjustFlexSizes(mainFlexRight, "0", rAsideFlexRight);
   },
   (e)=>{
-    document.body.style.userSelect = '';
     mainDOM[".r-aside"].style.transition = "flex .3s ease";
     mainDOM[".main"].style.transition = "flex .3s ease";
   }
 );
+//Resize Event for Subsection and Sections
+applyResizeEvent("y", "oposite", ".r-aside-sections-resize", ".r-aside__subsection-body",
+  (e)=>{
+  },
+  (e)=>{
+    wholeHeight = mainDOM[".r-aside__body"].offsetHeight;
+    sectionHeight = mainDOM[".r-aside__section-body"].offsetHeight;
+    subsectionHeight = mainDOM[".r-aside__subsection-body"].offsetHeight;
+    const prev = e.originalSizeHeight - (event.clientY - e.startPositionY);
+    if (prev <= 33.17) {
+      subsectionHeight = 33.17;
+      function execute() {
+        mainDOM[".r-aside__subsection-body"].style.height = subsectionHeight + "px";
+        mainDOM[".r-aside__section-body"].style.height = "calc(100% - 33.17px)";
+      }
+      return execute();
+    } else if (prev >= wholeHeight) {
+      subsectionHeight = wholeHeight;
+    } else {
+      subsectionHeight = prev;
+    } 
+    sectionHeight = wholeHeight - subsectionHeight;
+    mainDOM[".r-aside__subsection-body"].style.height = subsectionHeight / wholeHeight * 100 + "%";
+    mainDOM[".r-aside__section-body"].style.height = sectionHeight / wholeHeight * 100 + "%";
+  },
+  (e)=>{
+  }
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Section Flags
-// let sections = {
-//     default: false,
-//     ish: false
-// }
-// mainDOM[".insoha-btn"].addEventListener('click', function() {
-//   sections.ish = true;
-//   console.log(sections);
-// });
+let sections = {
+    default: false,
+    ish: false
+}
+mainDOM[".insoha-btn"].addEventListener('click', function() {
+  sections.ish = true;
+  console.log(sections);
+});
