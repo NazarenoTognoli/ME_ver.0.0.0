@@ -20,7 +20,7 @@ function createProxyDOM(objeto) {
                   elementProp.length !== 1,
                   prop
                 )
-                return mainDOM[prop]; 
+                return objeto[prop];
             } else {
               console.error("Element/s not found: " + prop)
               return undefined

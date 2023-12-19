@@ -1,6 +1,4 @@
-/*<<<<<<<<<<<<<<<<< MAIN >>>>>>>>>>>>>>>>>>>>>>>>>>*/
 .ISH-section > main {
-/*	width: calc(100% - 1%);*/
 	width: calc(100%);
 	height: calc(100vh - 20px - 40px - 15px - 46px - 15px - 15px);
 	display: flex;
@@ -11,6 +9,8 @@
 	align-content: flex-start;
 	overflow-y: auto;
 	margin-right: 1%;
+	max-width: 100%;
+	box-sizing: border-box;
 }::-webkit-scrollbar {
 	width: 10px;
 	padding-left: 1%;

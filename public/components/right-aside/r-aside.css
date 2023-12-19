@@ -8,6 +8,7 @@
     transition: flex .3s ease;
     flex-wrap: nowrap;
     user-select: none;
+    max-width: calc(100vw - 528.22px);
 }
 .r-aside__resize-bar {
     background: var(--dark2);
