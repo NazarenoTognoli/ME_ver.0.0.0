@@ -78,18 +78,9 @@
 }
 /*-------- Edit Items Button -----------------*/
 .edit-group-button {
-	flex-basis: 10%;
+	flex-basis: 16%;
 	background: var(--dark4);
 	margin-right: auto;
-	border-width: 2px 0 2px 0;
-	border-style: solid;
-	border-color: var(--dark4);
-}
-/*-------- Edits groups Button -----------------*/
-.add-new-group-button {
-	background: var(--dark4);
-	margin-right: 1%;
-	width: 38px;
 	border-width: 2px 0 2px 0;
 	border-style: solid;
 	border-color: var(--dark4);
