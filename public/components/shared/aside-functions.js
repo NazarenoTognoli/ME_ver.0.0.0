@@ -63,6 +63,10 @@ function rAsideButtonDisappear(hide) {
 	rAsideButtonDissapearLogic(".r-aside__section", sectionActiveStyle, hide);
 	rAsideButtonDissapearLogic(".r-aside__subsection", subsectionActiveStyle, hide);
 }
-function minWidthRightAside(value) {
-	mainDOM[".r-aside"].style.minWidth = value ? "6.94px" : "0";
+function minWidthAside(value, side) {
+	if (side === "r") {	
+		mainDOM[".r-aside"].style.minWidth = value ? "6.94px" : "0";
+	} else {
+		mainDOM[".l-aside"].style.minWidth = value ? "6.94px" : "0";
+	}
 }

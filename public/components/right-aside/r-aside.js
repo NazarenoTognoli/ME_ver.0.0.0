@@ -1,15 +1,16 @@
 
 //Right Aside Logic
 function toggleRightAsideState() {
+  minWidthAside(false, "l");
 	let rAsideFlexVal = window.getComputedStyle(mainDOM[".r-aside"]).getPropertyValue('flex');
 	if (rAsideFlexVal === "0 1 0%") {
-    minWidthRightAside(true);
+    minWidthAside(true, "r");
 		adjustFlexSizes(mainFlexRight, "0", rAsideFlexRight);
 		adjustImgInversion("1", "-1");
 		rAsideButtonDisappear(false);
 	}
 	else {
-    minWidthRightAside(false);
+    minWidthAside(false, "r");
 		adjustFlexSizes("9", "0", "0");
 		adjustImgInversion("1", "1");
 		rAsideButtonDisappear(true);
@@ -62,9 +63,9 @@ applyResizeEvent("y", "oposite", ".r-aside-sections-resize", ".r-aside__subsecti
   (e)=>{
   },
   (e)=>{
-    wholeHeight = mainDOM[".r-aside__body"].offsetHeight;
-    sectionHeight = mainDOM[".r-aside__section-body"].offsetHeight;
-    subsectionHeight = mainDOM[".r-aside__subsection-body"].offsetHeight;
+    let wholeHeight = mainDOM[".r-aside__body"].offsetHeight;
+    let sectionHeight = mainDOM[".r-aside__section-body"].offsetHeight;
+    let subsectionHeight = mainDOM[".r-aside__subsection-body"].offsetHeight;
     const prev = e.originalSizeHeight - (event.clientY - e.startPositionY);
     if (prev <= 33.17) {
       subsectionHeight = 33.17;

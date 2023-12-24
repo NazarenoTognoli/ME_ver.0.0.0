@@ -3,9 +3,10 @@
     display: flex;
     position: relative;
     flex: 0;
-    height: 100%;
+    height: calc(100vh - 40px);
     background: var(--dark3);
     transition: flex .3s ease;
+    flex-wrap: nowrap;
 }
 .l-aside__button, .r-aside__button {
     background: var(--dark4);
@@ -33,4 +34,69 @@
 }
 .l-aside__button:hover img, .r-aside__button:hover img {
     filter: invert(70%);
+}
+.l-aside__resize-bar {
+    background: var(--dark2);
+    flex-basis: 7px;
+    cursor: col-resize;
+    height: 100%;
+}
+.l-aside__body {
+    display: flex;
+    position: relative;
+    height: 100%;
+    flex-basis: calc(100% - 7px);
+    background: var(--dark3);
+    transition: flex .3s ease;
+    flex-wrap: wrap;
+}
+.l-aside__body > .developer-console {
+    height: 35%;
+    width: 100%;
+    min-height: 40px;
+}
+.l-aside__body > .developer-console > .header {
+    height: 20px;
+    width: 100%;
+    display: flex;
+    background: var(--dark3);
+    background: var(--dark4);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+}
+.developer-console__button {
+    flex-basis: 20px;
+    height: 100%;
+    display: flex;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    background-image: url("../../../prototypes/arrow-gray.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-90deg) scaleX(1);
+}
+.developer-console__button:hover {
+    background-image: url("../../../prototypes/arrow-aqua.png");
+}
+.developer-console__section {
+    flex-basis: calc(100% - 20px);
+    height: 100%;
+}
+.l-aside__body > .developer-console > .body {
+    height: calc(100% - 20px);
+    width: 100%;
+}
+.l-aside__body > .content {
+    height: 65%;
+    width: 100%;
+}
+.l-aside__body > .content > .resize-bar {
+    height: 4px;
+    background-color: var(--dark2);
+    width: 100%;
+    cursor: n-resize;
+}
+.l-aside__body > .content > .body {
+    height: calc(100% - 4px);
+    width: 100%;
 }
