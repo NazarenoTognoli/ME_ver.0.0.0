@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="utils/normalize.css">
 	<link rel="stylesheet" type="text/css" href="utils/shared.css">
-	<link rel="stylesheet" type="text/css" href="components/shared/components-shared.css">
 	<link rel="stylesheet" type="text/css" href="components/header/header.css">
 	<link rel="stylesheet" type="text/css" href="components/main/main.css">
 	<link rel="stylesheet" type="text/css" href="components/left-aside/l-aside.css">
@@ -29,11 +28,18 @@
 			<div class="l-aside__body">
 				<div class="developer-console">
 					<header class="header">
-						<button class="developer-console__button">
-						</button>
-						<section class="developer-console__section"></section>
+							<button class="developer-console__button">
+							</button>
+							<section class="developer-console__section">
+								<span>Console</span>
+								<span>Inputs</span>
+							</section>
 					</header>
-					<div class="body"></div>
+					<div class="body">
+						<div class="records">
+						</div>
+						<textarea></textarea>
+					</div>
 				</div>
 				<div class="content">
 					<div class="resize-bar"></div>
@@ -131,6 +137,7 @@
 	<script type="text/javascript" src="components/shared/aside-functions.js"></script>
 	<script type="text/javascript" src="components/right-aside/r-aside.js"></script>
 	<script type="text/javascript" src="components/left-aside/l-aside.js"></script>
+	<script type="text/javascript" src="components/left-aside/developer-console/developer-console.js"></script>
 
 	<script type="text/javascript" src="sections/default-view/debug_default.js"></script>
 	<script type="text/javascript" src="sections/default-view/default.js"></script>
