@@ -67,7 +67,7 @@
     overflow-x: hidden;
     justify-content: flex-start;
 }
-.developer-console__button {
+.developer-console__header-button {
     position: absolute;
     top: 0;
     left: 0;
@@ -81,15 +81,57 @@
     background-repeat: no-repeat;
     background-position: center;
     transform: rotate(-90deg) scaleX(1);
+    z-index: 150;
+    background-color: inherit;
 }
-.developer-console__button:hover {
+.developer-console__header-button:hover {
     background-image: url("../../../prototypes/arrow-aqua.png");
 }
-.developer-console__section {
+.developer-console__header-section {
     flex-basis: calc(100% - 20px);
     height: 100%;
     transform: translateX(20px);
+    position: relative;
 }
+
+
+.developer-console__header-section > span {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 179px;
+}
+.developer-console__header-section > span > a {
+    display: block;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    background: var(--dark4);
+    z-index: 100;
+    cursor: default;
+}
+.developer-console__header-section > span > a:hover {
+    color: var(--aqua4);
+}
+.developer-console__header-section > span > a:nth-of-type(2) {
+    z-index: 50;
+    background: var(--dark4);
+}
+
+
+.developer-console__header-section > button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: red;
+    z-index: 110;
+}
+
 .l-aside__body > .developer-console > .body {
     height: calc(100% - 20px);
     width: 100%;

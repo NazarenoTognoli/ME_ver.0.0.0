@@ -30,17 +30,17 @@ function dropDownConsole() {
 		mainDOM[".l-aside__body > .developer-console"].style.minHeight = "20px";
 		mainDOM[".l-aside__body > .content"].style.height = "100%";
 		mainDOM[".l-aside__body > .developer-console"].style.height = "0";
-		mainDOM[".developer-console__button"].style.transform = 'rotate(-90deg) scaleX(-1)';
+		mainDOM[".developer-console__header-button"].style.transform = 'rotate(-90deg) scaleX(-1)';
 		mainDOM[".l-aside__body > .content > .resize-bar"].style.display = "none";
 	} else {
 		mainDOM[".l-aside__body > .developer-console"].style.minHeight = "40px";
 		mainDOM[".l-aside__body > .content"].style.height = lAsideContentHeightPercentage;
 		mainDOM[".l-aside__body > .developer-console"].style.height = lAsideConsoleHeightPercentage;
-		mainDOM[".developer-console__button"].style.transform = 'rotate(-90deg) scaleX(1)';
+		mainDOM[".developer-console__header-button"].style.transform = 'rotate(-90deg) scaleX(1)';
 		mainDOM[".l-aside__body > .content > .resize-bar"].style.display = "inherit";
 	}
 }
-mainDOM[".developer-console__button"].addEventListener('click', dropDownConsole);
+mainDOM[".developer-console__header-button"].addEventListener('click', dropDownConsole);
 
 //Control te size of the input for using all the height avaiable
 function textareaMinHeightRefresh() {
