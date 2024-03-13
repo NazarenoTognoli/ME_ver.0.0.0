@@ -32,5 +32,5 @@ fetch('http://localhost:5000/default/', {method: 'post'})
 	defaultViewLoaded.onChange(true);
 })
 .catch(error => {
-	console.log('Se produjo un error: ' + error);
+	console.log('Se produjo un error: ' + error); 
 }) : console.log("default view not executed");

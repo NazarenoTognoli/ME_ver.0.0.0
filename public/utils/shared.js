@@ -132,3 +132,4 @@ function applyResizeEvent(axisParam, directionParam, resizeElementParam, element
     document.body.style.userSelect = '';
   }
 }
+console.log('DEPENDENCY "SHARED" CONNECTED');
