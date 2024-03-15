@@ -62,7 +62,7 @@
 				<!-- Sections -->
 				<section class="ISH-section section">
 					<header>
-						<div class="search-input">	
+						<div class="search-input">
 							<div class="search-input__state"></div>
 							<input class="search-input__input" type="text" name="" placeholder="Search">
 						</div>
@@ -84,74 +84,83 @@
 			</button>
 			<div class="r-aside__resize-bar"></div>
 			<div class="r-aside__body">
-				<div class="r-aside__section-body">
-					<button class="r-aside__section insoha-btn">
+				<nav class="r-aside__section">
+					<button class="r-aside__section-button information-sources-handler-btn">
 						<span>Information sources handler</span>
 					</button>
-					<button class="r-aside__section tima-btn">
+					<button class="r-aside__section-button time-management-btn">
 						<span>Time management</span>
 					</button>
-					<button class="r-aside__section nore-btn">
+					<button class="r-aside__section-button notes-reminders-btn">
 						<span>Notes and reminders</span>
 					</button>
-					<button class="r-aside__section prre-btn">
+					<button class="r-aside__section-button problems-resolution-btn">
 						<span>Problems resolution</span>
 					</button>
-					<button class="r-aside__section grstmo-btn">
+					<button class="r-aside__section-button graphics-statistics-monitoring-btn">
 						<span>Graphics, statistics and monitoring</span>
 					</button>
-				</div>
-				<div class="r-aside__subsection-body">
-					<div class="r-aside-sections-resize"></div>
-					<div class="content">
-						<button class="r-aside__subsection">
+				</nav>
+				<nav class="r-aside__subsection">
+					<div class="r-aside__subsection-resize-bar"></div>
+					<div class="r-aside__subsection-body">
+						<button class="r-aside__subsection-button">
 							<span>Uncategorized</span>
 						</button>
-						<button class="r-aside__subsection">
+						<button class="r-aside__subsection-button">
 							<span>exmp-0</span>
 						</button>
-						<button class="r-aside__subsection">
+						<button class="r-aside__subsection-button">
 							<span>exmp-1</span>
 						</button>
-						<button class="r-aside__subsection">
+						<button class="r-aside__subsection-button">
 							<span>exmp-2</span>
 						</button>
-						<button class="r-aside__subsection">
+						<button class="r-aside__subsection-button">
 							<span>exmp-3</span>
 						</button>
-						<button class="r-aside__subsection">
+						<button class="r-aside__subsection-button">
 							<span>exmp-3</span>
 						</button>
-						<button class="r-aside__subsection">
+						<button class="r-aside__subsection-button">
 							<span>exmp-3</span>
 						</button>
-						<button class="r-aside__subsection">
+						<button class="r-aside__subsection-button">
 							<span>exmp-3</span>
 						</button>
 					</div>
-				</div>	
+				</nav>	
 			</div>
 		</aside>
 
 	</div>
 
-	<script class= "messi" type="text/javascript" src="utils/shared.js"></script>
-	<script type="text/javascript" src="utils/event-planner.js"></script>
+	<script type="module" src="utils/shared.js"></script>
+	<script type="module" src="utils/event-planner.js"></script>
 
-	<script type="text/javascript" src="components/header/header.js"></script>
-	<script type="text/javascript" src="components/main/main.js"></script>
-	<script type="text/javascript" src="components/shared/aside-functions.js"></script>
-	<script type="text/javascript" src="components/right-aside/r-aside.js"></script>
-	<script type="text/javascript" src="components/left-aside/l-aside.js"></script>
-	<script type="text/javascript" src="components/left-aside/developer-console/developer-console.js"></script>
+	<script type="module" src="components/header/header.js"></script>
+	<script type="module" src="components/main/main.js"></script>
+	<script type="module" src="components/shared/aside-functions.js"></script>
 
-	<script type="text/javascript" src="sections/default-view/debug_default.js"></script>
-	<script type="text/javascript" src="sections/default-view/default.js"></script>
+	<script type="module" src="components/right-aside/r-aside.js"></script>
+	<script type="module" src="components/right-aside/resize.js"></script>
+	<script type="module" src="components/right-aside/toggle-state.js"></script>
+	<script type="module" src="components/right-aside/section/section-buttons.js"></script>
+	<script type="module" src="components/right-aside/subsection/subsection-buttons.js"></script>
+	<script type="module" src="components/right-aside/subsection/resize-subsection.js"></script>
 
-	<script type="text/javascript" src="sections/ISH-view/shared/ISH.js"></script>
-	<script type="text/javascript" src="sections/ISH-view/header/ISH-header.js"></script>
-	<script type="text/javascript" src="sections/ISH-view/source-item/ISH-source-item.js"></script>
-	<script type="text/javascript" src="sections/ISH-view/shared/debug_ISH.js"></script>
+	<script type="module" src="components/left-aside/l-aside.js"></script>
+	<script type="module" src="components/left-aside/resize.js"></script>
+	<script type="module" src="components/left-aside/toggle-state.js"></script>
+	<script type="module" src="components/left-aside/developer-console/developer-console.js"></script>
+
+	<script type="module" src="sections/default-view/debug_default.js"></script>
+	<script type="module" src="sections/default-view/default.js"></script>
+
+	<script type="module" src="sections/ISH-view/shared/ISH.js"></script>
+	<script type="module" src="sections/ISH-view/header/ISH-header.js"></script>
+	<script type="module" src="sections/ISH-view/source-item/ISH-source-item.js"></script>
+	<script type="module" src="sections/ISH-view/shared/debug_ISH.js"></script>
 
 </body>
 </html>

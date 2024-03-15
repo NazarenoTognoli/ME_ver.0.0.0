@@ -37,7 +37,7 @@ function defineDOM() {
   return objeto 
 }
 //Boolean Values Listener Instance Creator
-class booleanListener {
+class BooleanListener {
   value = undefined;
   listenersF = [];
   listenersT = [];
@@ -75,61 +75,83 @@ function loadCSS(load, identifier, href = undefined) {
     mainDOM["head"].removeChild(link);  
   }
 }
-//Manejo de elementos redimensionables
-let applyResizeEventOBJ = {
-  x: {ahead: {}, oposite: {}},
-  y: {ahead: {},oposite: {}},
-  xy: {ahead: {},oposite: {}}
-};
-function applyResizeEvent(axisParam, directionParam, resizeElementParam, elementParam, startActions, resizeActions, stopActions) {
-  let axis = axisParam.toLowerCase();
-  let direction = directionParam.toLowerCase();
-  applyResizeEventOBJ[axis][direction][elementParam] = {};
-  let e = applyResizeEventOBJ[axis][direction][elementParam];
-  //Required Variables
-  e.resizeElement = document.querySelector(resizeElementParam);
-  e.resizeElement.addEventListener('mousedown', startResize);
-  e.element = document.querySelector(elementParam);
+function applyResizeEvent(resizeElementParam, elementParam, startActions, resizeActions, stopActions, options = {}) {
+  const obj = options;
   let isResizing = false;
-  //Could change between x and y or both
-  e.startPositionX = 0;
-  e.startPositionY = 0; 
-  //Could change between height and width or both
-  e.originalSizeWidth = 0;
-  e.originalSizeHeight = 0;
+
+  obj.resizeElement = document.querySelector(resizeElementParam);
+  obj.resizeElement.addEventListener('mousedown', startResize);
   
-  //============================================================================================================================================================================
-  //Called Asociated to the element navbar
+  obj.element = document.querySelector(elementParam);
+
+  obj.startPositionX = 0;
+  obj.startPositionY = 0; 
+
+  obj.originalSizeWidth = 0;
+  obj.originalSizeHeight = 0;
+
+  obj.growOrDecrease = function(axis) {
+    if (axis.toLowerCase() === "x") {  
+      return event.clientX - this.startPositionX
+    } else if (axis.toLowerCase() === "y") {
+      return event.clientY - this.startPositionY
+    } else {
+      console.error(`growOrDecrease function invalid parameter: "${axis}"`)
+    }
+  }
+
+  obj.reminder = () => {
+    console.log("event.clientX Aumenta cuando va hacia la derecha ? (+) : (-)")
+    console.log("event.clientY Aumenta cuando va hacia abajo ? (+) : (-)")
+  }
+
+  obj.refresh = function(directionParam) {
+    const direction = directionParam.toLowerCase()
+    const axis = direction === "right" || direction === "left" ? "x" : "y";
+    const originalSize = this[`originalSize${axis === "x" ? "Width" : "Height"}`]
+    if (direction === "right" || direction === "bottom") {
+      return originalSize + this.growOrDecrease(axis)
+    } else if (direction === "left" || direction === "top") {
+      return originalSize - this.growOrDecrease(axis)
+    } else {
+      console.error(`resizeEvents.refresh function invalid parameter: "${direction}"`)
+    }
+  }
+
   function startResize() {
-    //events only existing in the call of startResize until the end
     document.addEventListener('mousemove', resize);
     document.addEventListener('mouseup', stopResize);
     isResizing = true;
-    e.startPositionX = event.clientX;
-    e.startPositionY = event.clientY;
-    e.originalSizeWidth = e.element.offsetWidth;
-    e.originalSizeHeight = e.element.offsetHeight;
-    startActions(e);
+
+    obj.startPositionX = event.clientX;
+    obj.startPositionY = event.clientY;
+    
+    obj.originalSizeWidth = obj.element.offsetWidth;
+    obj.originalSizeHeight = obj.element.offsetHeight;
+    
+    startActions(obj);
+    
     document.body.style.userSelect = 'none';
   }
-  //============================================================================================================================================================================
+
   function resize() {
     if (isResizing) {
-      //Size of element being applied the event
-      //event.clientX Aumenta cuando va hacia la derecha
-      //event.clientY Aumenta cuando va hacia abajo
-      resizeActions(e);
+      resizeActions(obj);
     }
   }
-  //============================================================================================================================================================================
+
   function stopResize() {
     document.removeEventListener('mousemove', resize);
     document.removeEventListener('mouseup', stopResize);
     isResizing = false;
-    e.originalSizeWidth = e.element.offsetWidth;
-    e.originalSizeHeight = e.element.offsetHeight;
-    stopActions(e);
+    
+    obj.originalSizeWidth = obj.element.offsetWidth;
+    obj.originalSizeHeight = obj.element.offsetHeight;
+    
+    stopActions(obj);
+    
     document.body.style.userSelect = '';
   }
 }
-console.log('DEPENDENCY "SHARED" CONNECTED');
+
+export { defineDOM, loadCSS, applyResizeEvent, BooleanListener }

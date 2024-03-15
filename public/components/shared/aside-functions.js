@@ -1,72 +1,70 @@
-let rAsideFlag;
-//User Interaction
-
-asideButtonFunctionsLoaded.addEventListenerT(function() {
-	//Clicks for Asides
-	mainDOM[".l-aside__button"].addEventListener('click', toggleLeftAsideState);
-	mainDOM[".r-aside__button"].addEventListener('click', toggleRightAsideState);
-	//Q and E Keys for Asides
-	document.addEventListener('keydown', (event) => {
-		if (event.altKey && (event.key === 'a' || event.key === "A")) {
-			toggleLeftAsideState();
-		}
-		if (event.altKey && (event.key === 'l' || event.key === "L")) {
-			toggleRightAsideState();
-		}
-	});
-});
-
 //Components Sizes
+const componentsDOM = (selector, all) => all ? document.querySelectorAll(selector) : document.querySelector(selector);
 
-let rAsideFlexRight = "1";
-let mainFlexRight = "8";
-let lAsideFlexRight = "0";
-
-let rAsideFlexLeft = "0";
-let mainFlexLeft = "7.2";
-let lAsideFlexLeft = "1.8";
-
-//Adjust Sizes For Main, Right Aside and Left Aside when the User Interacts
-
-function adjustFlexSizes(mainParam, lAsideParam, rAsideParam) {
-	mainDOM[".main"].style.flex = mainParam;	
-	mainDOM[".l-aside"].style.flex = lAsideParam;
-	mainDOM[".r-aside"].style.flex = rAsideParam;
+export function adjustFlexSizes(mainParam, lAsideParam, rAsideParam) {
+	componentsDOM(".main").style.flex = mainParam;	
+	componentsDOM(".l-aside").style.flex = lAsideParam;
+	componentsDOM(".r-aside").style.flex = rAsideParam;
 }
-
-//Adjust Images Inversion
-
-function adjustImgInversion(left, right) {
-	mainDOM[".l-aside__button img"].style.transform = `scaleX(${left})`;
-	mainDOM[".r-aside__button img"].style.transform = `scaleX(${right})`;
+export function adjustImgInversion(left, right) {
+	componentsDOM(".l-aside__button img").style.transform = `scaleX(${left})`;
+	componentsDOM(".r-aside__button img").style.transform = `scaleX(${right})`;
 }
-
-//Right Aside Button Styles Disappearing
-let subsectionActiveStyle = {saved: undefined, element: 'r-aside__subsection--active'}
-let sectionActiveStyle = {saved: undefined, element: 'r-aside__section--active'}
-function rAsideButtonDissapearLogic(sections, active, hide) {
-	mainDOM[".r-aside__subsection-body > .content"].style.marginRight = hide ? "0" : "5px";
-	mainDOM[".r-aside__section-body"].style.marginRight = hide ? "0" : "5px";
-	mainDOM[sections].forEach(element => {
-		//element.style.opacity = hide ? "0" : "1";
-		element.style.cursor = hide ? "default" : "pointer";
-		if (element.classList.contains(active.element) && hide) {
-			active.saved = element;
-			element.classList.remove(active.element);
-		}
-		if (active.saved !== undefined && !hide) {
-			active.saved.classList.add(active.element);
-		}
-	});
-}
-function rAsideButtonDisappear(hide) {
-	rAsideButtonDissapearLogic(".r-aside__section", sectionActiveStyle, hide);
-	rAsideButtonDissapearLogic(".r-aside__subsection", subsectionActiveStyle, hide);
-}
-function minWidthAside(value, side) {
-	if (side === "r") {	
-		mainDOM[".r-aside"].style.minWidth = value ? "6.94px" : "0";
+export function minWidthAside(value, side) {
+	if (side === "right") {	
+		componentsDOM(".r-aside").style.minWidth = value ? "6.94px" : "0";
 	} else {
-		mainDOM[".l-aside"].style.minWidth = value ? "6.94px" : "0";
+		componentsDOM(".l-aside").style.minWidth = value ? "6.94px" : "0";
 	}
+}
+export function Flex(lAside, rAside, main) {
+	this.lAside = lAside;
+	this.rAside = rAside;
+	this.main = main;
+	this.update = function(method, value) {
+		this[method] = value;
+	}
+}
+export function removeTransition(remove, side, main) {
+	side.style.transition = remove ? "none" : "flex .3s ease"
+   	main.style.transition = remove ? "none" : "flex .3s ease"
+}
+
+//The rAsideButtonDisappear function is to fix problems with the right side styles when it contracts
+let activeClassSection, activeClassSubsection;
+export function rAsideHiddenStylesFix(hide) {
+	const getActiveClass = (section) => ({class: `r-aside__${section === "section" ? "section" : "subsection"}-button--active`})
+	if (!activeClassSection || !activeClassSubsection) {
+		activeClassSection = getActiveClass("section")
+		activeClassSubsection = getActiveClass("subsection")
+	}
+	let activeClass;
+	const removeBodyMargin = (section) => {
+		componentsDOM(`.r-aside__${section === "section" ? "section" : "subsection-body"}`).
+		style.marginRight = hide ? "0" : "5px"}
+	
+	const removeActiveClass = (button) => {
+			activeClass.exist = button;
+			button.classList.remove(activeClass.class)}
+	
+	const addActiveClass = () => activeClass.exist.classList.add(activeClass.class)
+	
+	const activeClassConditions = (button) => {
+		if (button.classList.contains(activeClass.class) && hide) {//Check if the button has the class and if hide then remove active
+			removeActiveClass(button)}
+		if (activeClass.exist && !hide) {//Check if there is something active and if is not hide then will add active
+			addActiveClass()}}
+	
+	const manageButtonsActiveClass = (buttons) => {
+		activeClass = buttons.includes("subsection") ? activeClassSubsection : activeClassSection;
+		componentsDOM(buttons, true).forEach(button => {
+			button.style.cursor = hide ? "default" : "pointer"
+			activeClassConditions(button)
+		})}
+
+	manageButtonsActiveClass(".r-aside__section-button")
+	manageButtonsActiveClass(".r-aside__subsection-button")
+
+	removeBodyMargin("section")
+	removeBodyMargin("subsection")
 }

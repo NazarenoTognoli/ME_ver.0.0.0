@@ -1,23 +1,30 @@
-let devConDOM = defineDOM();
+import { applyResizeEvent } from '../../../utils/shared.js'
+const componentsDOM = (selector) => document.querySelector(selector)
 //Make console resize
+//Resize Event for left aside console
+function lAsideRefreshHeight (value) {
+	let contentStyle = window.getComputedStyle(componentsDOM(".l-aside__body > .content"));
+	let consoleStyle = window.getComputedStyle(componentsDOM(".l-aside__body > .developer-console"));
+		return value ? contentStyle.getPropertyValue("height") : consoleStyle.getPropertyValue("height");
+}
 let lAsideConsoleHeightPercentage = lAsideRefreshHeight(false);
 let lAsideContentHeightPercentage = lAsideRefreshHeight(true);
 
-applyResizeEvent("y", "oposite", ".l-aside__body > .content > .resize-bar", ".l-aside__body > .content", 
+applyResizeEvent(".l-aside__body > .content > .resize-bar", ".l-aside__body > .content", 
 	(e)=>{},
 	(e)=>{
-		let wholeHeight = mainDOM[".l-aside__body"].offsetHeight;
-    	let consoleHeight = devConDOM[".l-aside__body > .developer-console"].offsetHeight;
-    	let contentHeight = mainDOM[".l-aside__body > .content"].offsetHeight;
+		let wholeHeight = componentsDOM(".l-aside__body").offsetHeight;
+    let consoleHeight = componentsDOM(".l-aside__body > .developer-console").offsetHeight;
+    let contentHeight = componentsDOM(".l-aside__body > .content").offsetHeight;
 
 		const prev = e.originalSizeHeight - (event.clientY - e.startPositionY);
 		
 		consoleHeight = wholeHeight - contentHeight;
 		contentHeight = prev;
 
-		devConDOM[".l-aside__body > .developer-console"].style.height = lAsideConsoleHeightPercentage = 
+		componentsDOM(".l-aside__body > .developer-console").style.height = lAsideConsoleHeightPercentage = 
 		consoleHeight / wholeHeight * 100 + "%";
-    	mainDOM[".l-aside__body > .content"].style.height = lAsideContentHeightPercentage = 
+    	componentsDOM(".l-aside__body > .content").style.height = lAsideContentHeightPercentage = 
     	contentHeight / wholeHeight * 100 + "%";
 	},
 	(e)=>{
@@ -26,35 +33,35 @@ applyResizeEvent("y", "oposite", ".l-aside__body > .content > .resize-bar", ".l-
 
 //Drop down console
 function dropDownConsole() {
-	if (devConDOM[".l-aside__body > .developer-console"].offsetHeight !== 20) {
-		devConDOM[".l-aside__body > .developer-console"].style.minHeight = "20px";
-		mainDOM[".l-aside__body > .content"].style.height = "100%";
-		devConDOM[".l-aside__body > .developer-console"].style.height = "0";
-		devConDOM[".developer-console__header-button"].style.transform = 'rotate(-90deg) scaleX(-1)';
-		mainDOM[".l-aside__body > .content > .resize-bar"].style.display = "none";
+	if (componentsDOM(".l-aside__body > .developer-console").offsetHeight !== 20) {
+		componentsDOM(".l-aside__body > .developer-console").style.minHeight = "20px";
+		componentsDOM(".l-aside__body > .content").style.height = "100%";
+		componentsDOM(".l-aside__body > .developer-console").style.height = "0";
+		componentsDOM(".developer-console__header-button").style.transform = 'rotate(-90deg) scaleX(-1)';
+		componentsDOM(".l-aside__body > .content > .resize-bar").style.display = "none";
 	} else {
-		devConDOM[".l-aside__body > .developer-console"].style.minHeight = "40px";
-		mainDOM[".l-aside__body > .content"].style.height = lAsideContentHeightPercentage;
-		devConDOM[".l-aside__body > .developer-console"].style.height = lAsideConsoleHeightPercentage;
-		devConDOM[".developer-console__header-button"].style.transform = 'rotate(-90deg) scaleX(1)';
-		mainDOM[".l-aside__body > .content > .resize-bar"].style.display = "inherit";
+		componentsDOM(".l-aside__body > .developer-console").style.minHeight = "40px";
+		componentsDOM(".l-aside__body > .content").style.height = lAsideContentHeightPercentage;
+		componentsDOM(".l-aside__body > .developer-console").style.height = lAsideConsoleHeightPercentage;
+		componentsDOM(".developer-console__header-button").style.transform = 'rotate(-90deg) scaleX(1)';
+		componentsDOM(".l-aside__body > .content > .resize-bar").style.display = "inherit";
 	}
 }
-devConDOM[".developer-console__header-button"].addEventListener('click', dropDownConsole);
+componentsDOM(".developer-console__header-button").addEventListener('click', dropDownConsole);
 
 //Control te size of the input for using all the height avaiable
 function textareaMinHeightRefresh() {
-	let textareaMinHeight = devConDOM[".l-aside__body > .developer-console > .body"].offsetHeight - 
-	devConDOM["#console > .records"].offsetHeight;
+	let textareaMinHeight = componentsDOM(".l-aside__body > .developer-console > .body").offsetHeight - 
+	componentsDOM("#console > .records").offsetHeight;
 	textarea.style.minHeight = textareaMinHeight + "px";
 }
 
 //Refresh when input is being introduced
-devConDOM["#console > textarea"].addEventListener('input', textareaMinHeightRefresh);
+componentsDOM("#console > textarea").addEventListener('input', textareaMinHeightRefresh);
 
 //Register for the left aside console
-const textarea = devConDOM["#console > textarea"];
-const recordsContainer = devConDOM["#console > .records"];
+const textarea = componentsDOM("#console > textarea");
+const recordsContainer = componentsDOM("#console > .records");
 let registredValue;
 textarea.addEventListener('keydown', (event)=>{
 	if (event.key === "Enter") {
@@ -81,26 +88,26 @@ function handleTextareaMinHeightResponsive(entries) {
   }
 }
 const observeDeveloperConsoleBody = new ResizeObserver(handleTextareaMinHeightResponsive);
-observeDeveloperConsoleBody.observe(devConDOM[".l-aside__body > .developer-console > .body"]);
+observeDeveloperConsoleBody.observe(componentsDOM(".l-aside__body > .developer-console > .body"));
 
 //Activate buttons console and templates
-devConDOM[".console-btn"].addEventListener('click', function () {
+componentsDOM(".console-btn").addEventListener('click', function () {
 	this.classList.add("console-btn--active");
-	devConDOM[".templates-btn"].classList.remove("templates-btn--active");
-	devConDOM["#console"].style.display = "block";
-	devConDOM["#templates"].style.display = "none";
+	componentsDOM(".templates-btn").classList.remove("templates-btn--active");
+	componentsDOM("#console").style.display = "block";
+	componentsDOM("#templates").style.display = "none";
 	textareaMinHeightRefresh();
 });
-devConDOM[".templates-btn"].addEventListener('click', function () {
+componentsDOM(".templates-btn").addEventListener('click', function () {
 	this.classList.add("templates-btn--active");
-	devConDOM[".console-btn"].classList.remove("console-btn--active");
-	devConDOM["#console"].style.display = "none";
-	devConDOM["#templates"].style.display = "block";
+	componentsDOM(".console-btn").classList.remove("console-btn--active");
+	componentsDOM("#console").style.display = "none";
+	componentsDOM("#templates").style.display = "block";
 });
 
 //templates background
 function generateBackground() {
-  const background = devConDOM["#templates > .background"];
+  const background = componentsDOM("#templates > .background");
   const fragment = document.createDocumentFragment();
   
   for (let i = 0; i < 50 * 50; i++) {

@@ -1,5 +1,8 @@
+import * as module from '../../utils/shared.js'
+import { debugDefault } from './debug_default.js'
 let flag = false;
 let defaultDOM = {};
+let defaultViewLoaded = new module.BooleanListener;
 let createDefaultDOM = () => {
 	createDOM(
 		defaultDOM, 
@@ -11,7 +14,7 @@ let createDefaultDOM = () => {
 	)
 }
 let loadDefaultCSS = () => {
-	loadCSS(true, "default-css", "sections/default-view/default.css")
+	module.loadCSS(true, "default-css", "sections/default-view/default.css")
 }
 defaultViewLoaded.addEventListenerT(createDefaultDOM);
 defaultViewLoaded.addEventListenerT(loadDefaultCSS);

@@ -14,7 +14,7 @@
     background: var(--dark1);
     transition: flex .3s ease;
     flex-wrap: wrap;
-    min-width: 528.22px;
+    min-width: 500px;
     overflow: hidden;
 }
 
