@@ -3,7 +3,6 @@ import { applyResizeEvent, start, resizeProcess, end } from './resize.js'
 import * as subsection from './subsection/resize-subsection.js'
 import './section/section-buttons.js'
 import './subsection/subsection-buttons.js'
-import './right-aside.css'
 
 let clickToggle = document.querySelector(".r-aside__button");
 

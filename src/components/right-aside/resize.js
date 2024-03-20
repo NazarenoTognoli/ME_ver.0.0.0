@@ -5,7 +5,7 @@ const rAside = document.querySelector(".r-aside")
 const main = document.querySelector(".main")
 
 let mainWidth, rAsideWidth;
-let bodyWidth = document.querySelector("#body").offsetWidth;
+let bodyWidth = document.querySelector("#root").offsetWidth;
 
 const updateFlexSizes = () => {
   flex.update("rAside", (rAsideWidth / window.innerWidth) * 100 / 9)

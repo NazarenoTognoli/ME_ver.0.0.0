@@ -1,4 +1,4 @@
-const rAsideBodyHeight = document.querySelector(".r-aside__body").offsetHeight;
+const rAsideBodyHeight = document.querySelector(".r-aside").offsetHeight;
 
 const section = document.querySelector(".r-aside__section");
 const subsection = document.querySelector(".r-aside__subsection");
