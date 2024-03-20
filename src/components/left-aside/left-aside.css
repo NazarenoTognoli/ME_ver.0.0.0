@@ -137,12 +137,7 @@
     height: calc(100% - 20px);
     width: calc(100%);
     position: relative;
-    overflow: auto;
     background: var(--dark3);
-}
-.l-aside__body > .developer-console > .body::-webkit-scrollbar {
-    height: 0 !important;
-    width: 0 !important;
 }
 /*=====================================================================*/
 #console {
@@ -156,6 +151,14 @@
 #console:hover {
     overflow: auto;
 }
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: var(--dark4);
+    border-radius: 4px;
+}
+.scrollbar-custom::-webkit-scrollbar {
+    width: 7px;
+    background-color: transparent;
+}
 #console > textarea {
     resize: none;
     height: auto;
@@ -164,7 +167,6 @@
     margin: 0;
     border: none;
     display: block;
-    overflow: hidden;
     outline: none;
     background: none;
     font-weight: 800;
@@ -172,6 +174,14 @@
     color: #FFF;
     font-size: 14px;
     box-sizing: content-box;
+}
+#console > textarea::-webkit-scrollbar {
+    width: 7px;
+    background-color: transparent;
+}
+#console > textarea::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
 }
 #console > .records {
     height: auto;

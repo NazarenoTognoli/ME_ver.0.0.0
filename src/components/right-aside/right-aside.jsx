@@ -7,7 +7,7 @@ function RightAside() {
                 </button>
                 <div className="r-aside__resize-bar"></div>
                 <div className="r-aside__body">
-                    <nav className="r-aside__section">
+                    <nav className="r-aside__section scrollbar-custom">
                         <button className="r-aside__section-button information-sources-handler-btn">
                             <span>Information sources handler</span>
                         </button>
@@ -26,7 +26,7 @@ function RightAside() {
                     </nav>
                     <nav className="r-aside__subsection">
                         <div className="r-aside__subsection-resize-bar"></div>
-                        <div className="r-aside__subsection-body">
+                        <div className="r-aside__subsection-body scrollbar-custom">
                             <button className="r-aside__subsection-button">
                                 <span>Uncategorized</span>
                             </button>

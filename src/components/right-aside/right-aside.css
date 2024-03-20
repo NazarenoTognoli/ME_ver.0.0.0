@@ -38,9 +38,6 @@
 .r-aside__section:hover {
     overflow: auto;
 }
-.r-aside__section::-webkit-scrollbar {
-    width: 7px;
-}
 .r-aside__subsection-body {
     height: 100%;
     width: 100%;
@@ -52,9 +49,6 @@
 }
 .r-aside__subsection-body:hover {
     overflow: auto;
-}
-.r-aside__subsection-body::-webkit-scrollbar {
-    width: 7px;
 }
 .r-aside__section-button, .r-aside__subsection-button {
     flex-basis: 100%;

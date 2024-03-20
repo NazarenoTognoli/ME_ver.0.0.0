@@ -16,7 +16,7 @@ function LeftAside() {
                                 </section>
                         </header>
                         <div className="body">
-                            <div id="console">
+                            <div id="console" className="scrollbar-custom">
                                 <div className="records">
                                     <div className="record">~ System type "info" for seeking reference</div>
                                 </div>
