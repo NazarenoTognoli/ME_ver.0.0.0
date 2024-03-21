@@ -11,7 +11,7 @@ const adjustSizesInPercentages = () => {
 }
 
 const adjustSizesInPixeles = () => {
-  subsection.style.height = subsectionHeight + "px";
+  subsection.style.height = "33.17px"; //To ensure correct size
   section.style.height = `calc(100% - ${subsectionHeight})`; 
 }
 

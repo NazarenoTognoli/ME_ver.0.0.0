@@ -1,13 +1,14 @@
 .r-aside {
     display: flex;
-    position: relative;
-    flex: 0;
+    width: 0;
+    position: absolute;
     height: calc(100vh - 40px);
     background: var(--dark3);
-    transition: flex .3s ease;
+    transition: width .3s ease;
     flex-wrap: nowrap;
     user-select: none;
-    max-width: calc(100vw - 528.22px);
+    max-width: calc(100vw - 50px);
+    right: 0;
 }
 .r-aside__resize-bar {
     background: var(--dark2);

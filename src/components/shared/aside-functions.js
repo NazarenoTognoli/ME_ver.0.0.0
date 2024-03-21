@@ -1,33 +1,32 @@
-//Components Sizes
-const componentsDOM = (selector, all) => all ? document.querySelectorAll(selector) : document.querySelector(selector);
-
 export function adjustFlexSizes(mainParam, lAsideParam, rAsideParam) {
-	componentsDOM(".main").style.flex = mainParam;	
-	componentsDOM(".l-aside").style.flex = lAsideParam;
-	componentsDOM(".r-aside").style.flex = rAsideParam;
+	document.querySelector(".main").style.flex = mainParam;	
+	document.querySelector(".l-aside").style.flex = lAsideParam;
+	document.querySelector(".r-aside").style.flex = rAsideParam;
 }
 export function adjustImgInversion(left, right) {
-	componentsDOM(".l-aside__button img").style.transform = `scaleX(${left})`;
-	componentsDOM(".r-aside__button img").style.transform = `scaleX(${right})`;
+	document.querySelector(".l-aside__button img").style.transform = `scaleX(${left})`;
+	document.querySelector(".r-aside__button img").style.transform = `scaleX(${right})`;
 }
 export function minWidthAside(value, side) {
 	if (side === "right") {	
-		componentsDOM(".r-aside").style.minWidth = value ? "6.94px" : "0";
+		document.querySelector(".r-aside").style.minWidth = value ? "6.94px" : "0";
 	} else {
-		componentsDOM(".l-aside").style.minWidth = value ? "6.94px" : "0";
+		document.querySelector(".l-aside").style.minWidth = value ? "6.94px" : "0";
 	}
 }
-export function Flex(lAside, rAside, main) {
-	this.lAside = lAside;
-	this.rAside = rAside;
-	this.main = main;
-	this.update = function(method, value) {
-		this[method] = value;
+export function adjustSizes(left, right) {
+	document.querySelector(".l-aside").style.width = left
+	document.querySelector(".r-aside").style.width = right
+}
+export function Aside(element) {
+	this.size = "33vw"
+	this.element = element
+	this.update = function(value) {
+		this.size = value;
 	}
 }
-export function removeTransition(remove, side, main) {
-	side.style.transition = remove ? "none" : "flex .3s ease"
-   	main.style.transition = remove ? "none" : "flex .3s ease"
+export function removeTransition(remove, side) {
+	side.style.transition = remove ? "none" : "width .3s ease"
 }
 
 //The rAsideButtonDisappear function is to fix problems with the right side styles when it contracts
@@ -40,7 +39,7 @@ export function rAsideHiddenStylesFix(hide) {
 	}
 	let activeClass;
 	const removeBodyMargin = (section) => {
-		componentsDOM(`.r-aside__${section === "section" ? "section" : "subsection-body"}`).
+		document.querySelector(`.r-aside__${section === "section" ? "section" : "subsection-body"}`).
 		style.marginRight = hide ? "0" : "5px"}
 	
 	const removeActiveClass = (button) => {
@@ -57,7 +56,7 @@ export function rAsideHiddenStylesFix(hide) {
 	
 	const handleActiveClass = (buttons) => {
 		activeClass = buttons.includes("subsection") ? activeClassSubsection : activeClassSection;
-		componentsDOM(buttons, true).forEach(button => {
+		document.querySelectorAll(buttons).forEach(button => {
 			button.style.cursor = hide ? "default" : "pointer"
 			activeClassConditions(button)
 		})}

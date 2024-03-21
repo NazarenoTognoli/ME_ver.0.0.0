@@ -1,11 +1,13 @@
 .l-aside {
     display: flex;
-    position: relative;
-    flex: 0;
+    position: absolute;
+    width: 0;
     height: calc(100vh - 40px);
     background: var(--dark3);
-    transition: flex .3s ease;
+    transition: width .3s ease;
+    max-width: calc(100vw - 50px);
     flex-wrap: nowrap;
+    z-index: 2;
 }
 .l-aside__button, .r-aside__button {
     background: var(--dark4);
@@ -46,7 +48,7 @@
     height: 100%;
     width: calc(100% - 7px);
     background: var(--dark3);
-    transition: flex .3s ease;
+    transition: width .3s ease;
     flex-wrap: wrap;
 }
 /*=====================================================================*/

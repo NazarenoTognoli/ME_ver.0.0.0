@@ -1,21 +1,19 @@
 import * as asideFunctions from '../shared/aside-functions.js'
 
-let lAside = document.querySelector(".l-aside")
-export const flex = new asideFunctions.Flex("1.8", "0", "7.2")
+export const lAside = new asideFunctions.Aside(document.querySelector(".l-aside"))
 
 export function toggleState() {
 	asideFunctions.minWidthAside(false, "right");
-	const flexSize = window.getComputedStyle(lAside).getPropertyValue('flex');
-	const none = "0 1 0%";
-	if (flexSize === none) {
-		asideFunctions.adjustFlexSizes(flex.main, flex.lAside, flex.rAside);
+	const size = window.getComputedStyle(lAside.element).getPropertyValue('width');
+	if (size === "0px") {
 		asideFunctions.adjustImgInversion("-1", "1");
-		asideFunctions.minWidthAside(true, "left");
+		asideFunctions.minWidthAside(true, "left")
+		asideFunctions.adjustSizes(lAside.size, "0")
 	}
 	else {
-		asideFunctions.adjustFlexSizes("9", "0", "0");
 		asideFunctions.adjustImgInversion("1", "1");
 		asideFunctions.minWidthAside(false, "left");
+		asideFunctions.adjustSizes("0", "0")
 	}
 	asideFunctions.rAsideHiddenStylesFix(true);
 }

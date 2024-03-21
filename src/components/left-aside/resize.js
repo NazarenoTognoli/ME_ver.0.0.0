@@ -1,28 +1,22 @@
 import { adjustFlexSizes, removeTransition } from '../shared/aside-functions.js'
-import { flex } from './toggle-state.js';
+import { lAside } from './toggle-state.js'
 
-const lAside = document.querySelector(".l-aside")
-const main = document.querySelector(".main")
+let lAsideWidth;
 
-let mainWidth, lAsideWidth;
-
-const updateFlexSizes = () => {
-	flex.update("lAside", (lAsideWidth / window.innerWidth) * 100 / 9)
-	flex.update("main", (mainWidth / window.innerWidth) * 100 / 9)}
+const updateSizeInPercentage = () => lAside.update(lAsideWidth / window.innerWidth * 100 + "vw")
 
 export function start() {
-	removeTransition(true, lAside, main)
+	removeTransition(true, lAside.element)
 }
 
 export function resizeProcess(e) {
 	lAsideWidth = e.refresh("right")
-	mainWidth = window.innerWidth - lAside.offsetWidth
-	updateFlexSizes()
-	adjustFlexSizes(flex.main, flex.lAside, "0")
+	updateSizeInPercentage()
+	lAside.element.style.width = lAside.size
 }
 
 export function end() {
-	removeTransition(false, lAside, main)
+	removeTransition(false, lAside.element)
 }
 
 export { applyResizeEvent } from '../../utils/shared.js'
