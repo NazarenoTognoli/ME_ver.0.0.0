@@ -1,5 +1,8 @@
-import './right-aside.css'
 import React from 'react'
+import SectionButtons from './section-buttons/section-buttons.jsx'
+import SubsectionButtons from './subsection-buttons/subsection-buttons.jsx'
+import './right-aside.css'
+import './shared/buttons.css'
 function RightAside() {
     return ( <aside className="r-aside">
                 <button className="r-aside__button">
@@ -7,52 +10,8 @@ function RightAside() {
                 </button>
                 <div className="r-aside__resize-bar"></div>
                 <div className="r-aside__body">
-                    <nav className="r-aside__section scrollbar-custom">
-                        <button className="r-aside__section-button information-sources-handler-btn">
-                            <span>Information sources handler</span>
-                        </button>
-                        <button className="r-aside__section-button time-management-btn">
-                            <span>Time management</span>
-                        </button>
-                        <button className="r-aside__section-button notes-reminders-btn">
-                            <span>Notes and reminders</span>
-                        </button>
-                        <button className="r-aside__section-button problems-resolution-btn">
-                            <span>Problems resolution</span>
-                        </button>
-                        <button className="r-aside__section-button graphics-statistics-monitoring-btn">
-                            <span>Graphics, statistics and monitoring</span>
-                        </button>
-                    </nav>
-                    <nav className="r-aside__subsection">
-                        <div className="r-aside__subsection-resize-bar"></div>
-                        <div className="r-aside__subsection-body scrollbar-custom">
-                            <button className="r-aside__subsection-button">
-                                <span>Uncategorized</span>
-                            </button>
-                            <button className="r-aside__subsection-button">
-                                <span>exmp-0</span>
-                            </button>
-                            <button className="r-aside__subsection-button">
-                                <span>exmp-1</span>
-                            </button>
-                            <button className="r-aside__subsection-button">
-                                <span>exmp-2</span>
-                            </button>
-                            <button className="r-aside__subsection-button">
-                                <span>exmp-3</span>
-                            </button>
-                            <button className="r-aside__subsection-button">
-                                <span>exmp-3</span>
-                            </button>
-                            <button className="r-aside__subsection-button">
-                                <span>exmp-3</span>
-                            </button>
-                            <button className="r-aside__subsection-button">
-                                <span>exmp-3</span>
-                            </button>
-                        </div>
-                    </nav>  
+                    <SectionButtons />
+                    <SubsectionButtons />
                 </div>
             </aside>
     )

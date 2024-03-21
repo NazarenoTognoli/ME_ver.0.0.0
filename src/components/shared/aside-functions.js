@@ -55,15 +55,15 @@ export function rAsideHiddenStylesFix(hide) {
 		if (activeClass.exist && !hide) {//Check if there is something active and if is not hide then will add active
 			addActiveClass()}}
 	
-	const manageButtonsActiveClass = (buttons) => {
+	const handleActiveClass = (buttons) => {
 		activeClass = buttons.includes("subsection") ? activeClassSubsection : activeClassSection;
 		componentsDOM(buttons, true).forEach(button => {
 			button.style.cursor = hide ? "default" : "pointer"
 			activeClassConditions(button)
 		})}
 
-	manageButtonsActiveClass(".r-aside__section-button")
-	manageButtonsActiveClass(".r-aside__subsection-button")
+	handleActiveClass(".r-aside__section-button")
+	handleActiveClass(".r-aside__subsection-button")
 
 	removeBodyMargin("section")
 	removeBodyMargin("subsection")
