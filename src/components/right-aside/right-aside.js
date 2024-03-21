@@ -9,6 +9,11 @@ let clickToggle = document.querySelector(".r-aside__button");
 clickToggle.addEventListener('click', ()=>{
   toggleState()
 })
+document.addEventListener('keydown', (event) => {
+  if ((event.key === "l" || event.key === "L") && event.altKey) {
+    toggleState();
+  }
+});
 
 applyResizeEvent(".r-aside__resize-bar", ".r-aside",
   (e)=> start(e),
