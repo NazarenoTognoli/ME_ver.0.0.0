@@ -18,6 +18,7 @@ function RightAside() {
         <aside className="r-aside">
             <button className="r-aside__button">
                 <img src="assets/img/left-arrow.png" />
+                <div className="r-aside__button-tooltip tooltip">Alt + L</div>
             </button>
             <div className="r-aside__resize-bar"></div>
             <Body />

@@ -4,7 +4,7 @@ function Main() {
     return ( 
         <main className="main">
             <nav className="top-nav-laterals"></nav>
-            <p style={{color: '#FFF', textAlign: 'center', fontSize: '18px', width: '100%'}}>DENVER IS DEATH</p> 
+            <p style={{color: '#F00', textAlign: 'center', fontSize: '18px', width: '100%'}}>DENVER IS DEATH</p> 
         </main> )
 }
 export default Main
