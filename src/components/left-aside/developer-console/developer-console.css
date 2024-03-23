@@ -25,7 +25,7 @@
     display: flex;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
-    background-image: url("../../prototypes/arrow-gray.png");
+    background-image: url("../../assets/img/arrow-gray.png");
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
@@ -34,7 +34,7 @@
     background-color: inherit;
 }
 .developer-console__header-button:hover {
-    background-image: url("../../prototypes/arrow-aqua.png");
+    background-image: url("../../assets/img/arrow-aqua.png");
 }
 .developer-console__header-section {
     flex-basis: calc(100% - 20px);

@@ -4,8 +4,23 @@ export function adjustFlexSizes(mainParam, lAsideParam, rAsideParam) {
 	document.querySelector(".r-aside").style.flex = rAsideParam;
 }
 export function adjustImgInversion(left, right) {
-	document.querySelector(".l-aside__button img").style.transform = `scaleX(${left})`;
-	document.querySelector(".r-aside__button img").style.transform = `scaleX(${right})`;
+	const leftButton = document.querySelector(".l-aside__button");
+    const rightButton = document.querySelector(".r-aside__button");
+
+    // Añadir o quitar la clase 'inverted' según el valor de 'left'
+    if (left) {
+        leftButton.classList.add("l-aside__button-inverted");
+    } else {
+        leftButton.classList.remove("l-aside__button-inverted");
+    }
+
+    // Añadir o quitar la clase 'inverted' según el valor de 'right'
+    if (right) {
+        rightButton.classList.add("r-aside__button-inverted");
+    } else {
+        rightButton.classList.remove("r-aside__button-inverted");
+    }
+    
 }
 export function minWidthAside(value, side) {
 	if (side === "right") {	

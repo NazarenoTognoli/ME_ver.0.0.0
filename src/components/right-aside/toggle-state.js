@@ -8,13 +8,13 @@ export function toggleState() {
 	if (size === "0px") {
 		asideFunctions.minWidthAside(true, "right");
 		asideFunctions.adjustSizes("0", rAside.size)
-		asideFunctions.adjustImgInversion("1", "-1");
+		asideFunctions.adjustImgInversion(false, true);
 		asideFunctions.rAsideHiddenStylesFix(false);
 	}
 	else {
 		asideFunctions.minWidthAside(false, "right");
 		asideFunctions.adjustSizes("0", "0")
-		asideFunctions.adjustImgInversion("1", "1");
+		asideFunctions.adjustImgInversion(false, false);
 		asideFunctions.rAsideHiddenStylesFix(true);
 	}
 }

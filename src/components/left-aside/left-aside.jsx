@@ -22,7 +22,6 @@ function LeftAside() {
     return (
         <aside className="l-aside">
             <button className="l-aside__button">
-                <img src="assets/img/right-arrow.png" />
                 <div className="l-aside__button-tooltip tooltip">Alt + A</div>
             </button>
             <Body />

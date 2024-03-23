@@ -6,12 +6,12 @@ export function toggleState() {
 	asideFunctions.minWidthAside(false, "right");
 	const size = window.getComputedStyle(lAside.element).getPropertyValue('width');
 	if (size === "0px") {
-		asideFunctions.adjustImgInversion("-1", "1");
+		asideFunctions.adjustImgInversion(true, false);
 		asideFunctions.minWidthAside(true, "left")
 		asideFunctions.adjustSizes(lAside.size, "0")
 	}
 	else {
-		asideFunctions.adjustImgInversion("1", "1");
+		asideFunctions.adjustImgInversion(false, false);
 		asideFunctions.minWidthAside(false, "left");
 		asideFunctions.adjustSizes("0", "0")
 	}
