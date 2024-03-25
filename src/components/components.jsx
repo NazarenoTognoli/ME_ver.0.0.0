@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react'
+
+import './shared/aside-styles.css'
+
 import Header from './header/header.jsx'
 import LeftAside from './left-aside/left-aside.jsx'
 import RightAside from './right-aside/right-aside.jsx'

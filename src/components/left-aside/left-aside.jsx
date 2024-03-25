@@ -1,13 +1,7 @@
 import './left-aside.css'
 import React from 'react'
 import DeveloperConsole from './developer-console/developer-console.jsx'
-
-function Content() {
-    return ( <div className="content">
-                <div className="resize-bar"></div>
-                <div className="body"></div>
-            </div> )
-}
+import Content from './content/content.jsx'
 
 function Body() {
     return (
@@ -24,7 +18,9 @@ function LeftAside() {
             <button className="l-aside__button">
                 <div className="l-aside__button-tooltip tooltip">Alt + A</div>
             </button>
+            
             <Body />
+
             <div className="l-aside__resize-bar"></div>
         </aside>
     )

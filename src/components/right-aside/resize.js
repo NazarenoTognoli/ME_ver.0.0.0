@@ -1,4 +1,4 @@
-import { adjustFlexSizes, removeTransition } from '../shared/aside-functions.js'
+import { removeTransition } from '../shared/aside-functions.js'
 import { rAside } from './toggle-state.js'
 
 let rAsideWidth

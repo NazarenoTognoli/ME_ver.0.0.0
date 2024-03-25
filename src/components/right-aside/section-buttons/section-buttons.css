@@ -1,0 +1,6 @@
+.r-aside__section {
+    overflow: hidden;
+}
+.r-aside__section:hover {
+    overflow: auto;
+}

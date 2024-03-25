@@ -1,4 +1,5 @@
 import React from 'react'
+import './subsection-buttons.css'
 function SubsectionButtons() {
     return (
         <nav className="r-aside__subsection">
@@ -20,13 +21,10 @@ function SubsectionButtons() {
                     <span>exmp-3</span>
                 </button>
                 <button className="r-aside__subsection-button">
-                    <span>exmp-3</span>
+                    <span>exmp-4</span>
                 </button>
                 <button className="r-aside__subsection-button">
-                    <span>exmp-3</span>
-                </button>
-                <button className="r-aside__subsection-button">
-                    <span>exmp-3</span>
+                    <span>exmp-5</span>
                 </button>
             </div>
         </nav>)

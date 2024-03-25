@@ -2,7 +2,7 @@ import React from 'react'
 import SectionButtons from './section-buttons/section-buttons.jsx'
 import SubsectionButtons from './subsection-buttons/subsection-buttons.jsx'
 import './right-aside.css'
-import './shared/buttons.css'
+import './shared/section-buttons-group.css'
 
 function Body() {
     return (

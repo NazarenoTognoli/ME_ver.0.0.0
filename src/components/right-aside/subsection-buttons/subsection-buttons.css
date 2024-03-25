@@ -1,0 +1,28 @@
+.r-aside__subsection-resize-bar {
+    height: 3px;
+    background: var(--dark2);
+    width: 100%;
+    cursor: n-resize;
+}
+.r-aside__subsection-body {
+    height: 100%;
+    width: 100%;
+    display: inherit;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: hidden;
+}
+.r-aside__subsection-body:hover {
+    overflow: auto;
+}
+.r-aside__subsection {
+    height: calc(50% + 3px);
+    background: var(--dark3);
+    z-index: 100;
+}
+.r-aside__subsection-button--active,
+.r-aside__subsection-button--active:hover {
+    color: var(--aqua2);
+    border-left: 2px solid var(--aqua2);
+}

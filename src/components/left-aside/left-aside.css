@@ -9,22 +9,6 @@
     flex-wrap: nowrap;
     z-index: 2;
 }
-.l-aside__button, .r-aside__button {
-    background: var(--dark4);
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    z-index: 2;
-    margin: 0;
-    flex: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 100%;
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
 .l-aside__button {
     right: 0;
     transform: translateX(20px);
@@ -34,25 +18,20 @@
 .l-aside__button-inverted {
     background-image: url("../../assets/img/arrow-gray-inverted.png")   
 }
-.r-aside__button {
-    background-image: url("../../assets/img/arrow-gray-inverted.png");
-}
-.r-aside__button-inverted {
-    background-image: url("../../assets/img/arrow-gray.png")   
-}
 .l-aside__button:hover {
     background-image: url("../../assets/img/arrow-aqua.png");
-}
-.r-aside__button:hover {
-    background-image: url("../../assets/img/arrow-aqua-inverted.png");
 }
 .l-aside__button-inverted:hover {
     background-image: url("../../assets/img/arrow-aqua-inverted.png");
 }
-.r-aside__button-inverted:hover {
-    background-image: url("../../assets/img/arrow-aqua.png");
+.l-aside__button-tooltip {
+    top: 28px;
+    left: 4px;
 }
-
+.l-aside__button-tooltip::before {
+    top: -5px;
+    left: 5px;
+}
 .l-aside__resize-bar {
     background: var(--dark2);
     flex-basis: 7px;
@@ -67,65 +46,4 @@
     background: var(--dark3);
     transition: width .3s ease;
     flex-wrap: wrap;
-}
-/*=====================================================================*/
-.l-aside__body > .content {
-    height: 65%;
-    width: 100%;
-    min-height: 37.16px;
-}
-.l-aside__body > .content > .resize-bar {
-    height: 4px;
-    background-color: var(--dark2);
-    width: 100%;
-    cursor: n-resize;
-}
-.l-aside__body > .content > .body {
-    height: calc(100% - 4px);
-    width: 100%;
-}
-/*==================================================================*/
-.l-aside__button-tooltip {
-    top: 28px;
-    left: 4px;
-}
-.r-aside__button-tooltip {
-    top: 28px;
-    right: 4px;
-}
-.tooltip::before {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 5px;
-    z-index: 300;
-    background: #000;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
-.l-aside__button-tooltip::before {
-    top: -5px;
-    left: 5px;
-}
-.r-aside__button-tooltip::before {
-    top: -5px;
-    right: 5px;
-}
-.l-aside__button:hover > .l-aside__button-tooltip, .r-aside__button:hover > .r-aside__button-tooltip {
-        opacity: 1;
-}
-.tooltip {
-    width: 200%;
-    position: absolute;
-    background: #000;
-    height: 20px;
-    z-index: 200;
-    opacity: 0;
-    transition: opacity .3s ease;
-    pointer-events: none;
-    color: #fff;
-    font-size: 9px;
-    padding-top: 4px;
-    text-align: center;
-    border-radius: 3px;
-    box-sizing: border-box;
 }

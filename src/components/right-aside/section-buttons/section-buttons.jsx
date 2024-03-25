@@ -1,4 +1,6 @@
 import React from 'react'
+import './section-buttons.css'
+
 function SectionButtons() {
     return (
         <nav className="r-aside__section scrollbar-custom">

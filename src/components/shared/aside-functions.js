@@ -1,8 +1,3 @@
-export function adjustFlexSizes(mainParam, lAsideParam, rAsideParam) {
-	document.querySelector(".main").style.flex = mainParam;	
-	document.querySelector(".l-aside").style.flex = lAsideParam;
-	document.querySelector(".r-aside").style.flex = rAsideParam;
-}
 export function adjustImgInversion(left, right) {
 	const leftButton = document.querySelector(".l-aside__button");
     const rightButton = document.querySelector(".r-aside__button");
