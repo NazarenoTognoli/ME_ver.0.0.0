@@ -3,7 +3,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 23px;
+    min-height: 42px;
     max-height: calc(100% - 23px);
     box-sizing: content-box;
 }
@@ -21,7 +21,7 @@
 .console__header {
     height: 40px;
     width: 100%;
-    background: slateblue;
+    background: var(--dark4);
     display: inherit;
     align-items: center;
     box-sizing: border-box;
@@ -35,15 +35,16 @@
     overflow-x: auto;
 }
 .console__header > div > button {
-    flex-shrink: 0; /* Evita que los elementos se achiquen */
-}
-#console-button {
-    width: 40px;
     height: 33px;
-    background: red;
-}
-#add-template-button {
     width: 40px;
-    height: 33px;
-    background: green;
+}
+.console__header .icon {
+    color: var(--dark5);
+    width: 100%;
+    height: 100%;
+}
+.console__header .icon:hover {
+    color: var(--aqua4);
+    width: 100%;
+    height: 100%;   
 }
