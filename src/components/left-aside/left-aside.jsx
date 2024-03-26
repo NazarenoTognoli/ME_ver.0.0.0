@@ -1,6 +1,6 @@
 import './left-aside.css'
 import React from 'react'
-import DeveloperConsole from './developer-console/developer-console.jsx'
+import DeveloperConsole from './console/console.jsx'
 import Content from './content/content.jsx'
 
 function Body() {

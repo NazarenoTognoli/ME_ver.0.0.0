@@ -54,3 +54,23 @@ button {
         "container";
     height: 100vh;
 }
+
+/* Estilos para la barra de desplazamiento */
+.scrollbar-custom::-webkit-scrollbar {
+    width: 7px; /* Ancho de la barra de desplazamiento */
+    height: 7px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent; /* Color del fondo de la barra de desplazamiento */
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background: var(--dark5);
+    border-radius: 4px;
+     /* Color del "thumb" de la barra de desplazamiento */
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: var(--white2); /* Color del "thumb" de la barra de desplazamiento cuando el mouse está encima */
+}
