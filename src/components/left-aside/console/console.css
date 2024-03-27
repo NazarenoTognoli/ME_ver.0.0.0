@@ -3,12 +3,12 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 42px;
+    min-height: 37px;
     max-height: calc(100% - 23px);
     box-sizing: content-box;
 }
 .console__body {
-    height: calc(100% - 3px - 40px);
+    height: calc(100% - 36px - 3px);
     width: 100%;
     background: var(--dark4);
 }
@@ -18,33 +18,77 @@
     background: var(--dark2);
     cursor: s-resize;
 }
+/*HEADER ===========================================*/
 .console__header {
-    height: 40px;
+    height: auto;
+    min-height: 36px;
     width: 100%;
     background: var(--dark4);
     display: inherit;
     align-items: center;
-    box-sizing: border-box;
+    box-sizing: content-box;
     white-space: nowrap;
     overflow: hidden;
 }
 .console__header > div {
-    height: 40px;
     width: 100%;
+    height: 100%;
     overflow-y: hidden;
     overflow-x: auto;
 }
 .console__header > div > button {
-    height: 33px;
-    width: 40px;
+    height: 28px;
+    width: 28px;
+    margin-left: 8px;
+    margin-top: 4px;
 }
 .console__header .icon {
     color: var(--dark5);
-    width: 100%;
-    height: 100%;
+    width: calc(85%);
+    height: calc(85%);
+    border: 1px solid var(--dark5);
+    border-radius: 1px;
 }
 .console__header .icon:hover {
     color: var(--aqua4);
+    border-color: var(--aqua4);
+}
+.console__header .icon:active {
+    transform: scale(0.9);
+}
+/*DEFAULT =======================================*/
+.console__body  > #default {
     width: 100%;
-    height: 100%;   
+    height: 100%;
+    color: var(--dark5);
+    overflow: hidden;
+    word-wrap: break-word;
+    font-family: monospace;
+}
+.console__body  > #default > span {
+    position: relative;
+    display: flex;
+    margin-top: 5px;
+    border-top: 1px solid var(--dark3);
+    padding: 5px 0 5px 20px;
+    align-items: center;
+    line-height: 0.85;
+}
+.console__body  > #default > span::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 4px;
+    background: var(--dark5);
+}
+.console__body  > #default > div {
+    width: 100%;
+    height: 20px;
+    border-top: 1px solid var(--dark3);
+    margin-top: 5px;
+    font-family: monospace;
+    color: var(--dark1);
 }
