@@ -1,0 +1,38 @@
+.console__body  > #default {
+    width: 100%;
+    height: 100%;
+    color: var(--dark5);
+    overflow: hidden;
+    word-wrap: break-word;
+    font-family: monospace;
+}
+.console__body  > #default > span {
+    position: relative;
+    display: flex;
+    margin-top: 5px;
+    border-top: 1px solid var(--dark3);
+    padding: 5px 0 5px 20px;
+    align-items: center;
+    line-height: 0.85;
+}
+.console__body  > #default > span:first-child {
+    margin-top: 0;
+}
+.console__body  > #default > span::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 4px;
+    background: var(--aqua4);
+}
+.console__body  > #default > div {
+    width: 100%;
+    height: 20px;
+    border-top: 1px solid var(--dark3);
+    margin-top: 5px;
+    font-family: monospace;
+    color: var(--dark1);
+}

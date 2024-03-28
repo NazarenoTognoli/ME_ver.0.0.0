@@ -1,0 +1,49 @@
+.console__header {
+    height: auto;
+    min-height: 36px;
+    width: 100%;
+    background: var(--dark4);
+    display: inherit;
+    align-items: center;
+    box-sizing: content-box;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.console__header > div:nth-of-type(1) {
+    width: calc(100% - 28px);
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.console__header > div:nth-of-type(1) > button, .console__header > div:nth-of-type(2) > button {
+    height: 28px;
+    width: 28px;
+    margin-left: 8px;
+    margin-top: 4px;
+}
+.console__header > div:nth-of-type(2) {
+    height: 100%;
+}
+.console__header .icon {
+    color: var(--dark3);
+    border: 1px solid var(--dark3);
+    width: calc(85%);
+    height: calc(85%);
+    border-radius: 1px;
+}
+.console__header .icon:hover {
+    color: var(--dark5);
+    border-color: var(--dark5);
+}
+.console__header .icon:active {
+    color: var(--white2);
+    border-color: var(--white2);
+}
+.console__template, .console__template--active .icon {
+    color: var(--dark3);
+    border-color: var(--dark3);
+}
+.console__template--active, .console__template--active .icon {
+    color: var(--dark5);
+    border-color: var(--dark5);
+}
