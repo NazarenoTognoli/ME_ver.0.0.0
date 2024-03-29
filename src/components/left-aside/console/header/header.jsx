@@ -15,9 +15,15 @@ function AddTemplate() {
 
 function TemplateScroll() {
     return (
-        <div className="scrollbar-custom" id="console-scroller">
-            <button id="console-button" className="console__template">
+        <div className="scrollbar-custom console-scroller">
+            <button id="console-button" className="console__template-button" id="console__template-button--active">
                 <FiTerminal className="icon" />
+            </button>
+            <button className="console__template-button console__template-button--created">
+            </button>
+            <button className="console__template-button console__template-button--created">
+            </button>
+            <button className="console__template-button console__template-button--created">
             </button>
         </div>)
 }

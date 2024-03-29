@@ -1,14 +1,14 @@
-const consoleTemplate = () => document.querySelectorAll(".console__template");
+const consoleTemplate = () => document.querySelectorAll(".console__template-button");
 
 const removeActiveClass = () => {
     consoleTemplate().forEach(template => {
-        template.classList.remove("console__template--active");
+        template.id = "";
     })
 }
 
 consoleTemplate().forEach(template => {
     template.addEventListener('click', function() {
         removeActiveClass()
-        this.classList.add("console__template--active");
+        this.id = "console__template-button--active";
     })
 })

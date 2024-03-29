@@ -3,7 +3,7 @@ import './default.css'
 
 function Default() {
     return (
-        <div id="default">
+        <div id="default" className="console__template">
             <span>Hello World</span>
             <span>New Statement</span>
             <div></div>

@@ -11,7 +11,7 @@ export function resizeProcess(e) {
     heightPx = e.refresh("bottom")
     updateSizeInPercentage()
     e.element.style.height = heightPercentage + "%"
-    brotherN0.style.height = 100 - heightPercentage + "%";
+    brotherN0.style.height = 100 - updateSizeInPercentage() + "%";
 }
 
 export { applyResizeEvent } from '../../../utils/shared.js'

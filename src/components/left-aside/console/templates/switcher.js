@@ -8,3 +8,5 @@ function switcher(activeElement) {
     })
     document.querySelector(activeElement).style.display = "inherit"
 }
+
+export default switcher

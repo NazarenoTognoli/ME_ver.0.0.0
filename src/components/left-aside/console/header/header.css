@@ -1,6 +1,6 @@
 .console__header {
     height: auto;
-    min-height: 36px;
+    min-height: 40px;
     width: 100%;
     background: var(--dark4);
     display: inherit;
@@ -9,41 +9,55 @@
     white-space: nowrap;
     overflow: hidden;
 }
-.console__header > div:nth-of-type(1) {
-    width: calc(100% - 28px);
+.console-scroller {
+    width: calc(100% - 40px);
     height: 100%;
     overflow-y: hidden;
     overflow-x: auto;
+    display: flex;
+    align-items: center;
 }
-.console__header > div:nth-of-type(1) > button, .console__header > div:nth-of-type(2) > button {
+.console-scroller > button {
     height: 28px;
     width: 28px;
     margin-left: 8px;
-    margin-top: 4px;
+    box-sizing: border-box;
+    border: 1px solid var(--dark3);
+    border-radius: 1px;
+    flex-shrink: 0;
+    color: var(--dark3);
 }
-.console__header > div:nth-of-type(2) {
+.add-template {
+    width: 40px;
     height: 100%;
+    border-left: 1px solid var(--dark3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-template > button {
+    border: 1px solid var(--dark3);
+    height: 26px;
+    width: 26px;
+    color: var(--dark3);
 }
 .console__header .icon {
-    color: var(--dark3);
-    border: 1px solid var(--dark3);
-    width: calc(85%);
-    height: calc(85%);
-    border-radius: 1px;
+    width: 26px;
+    height: 26px;
+    color: inherit;
 }
-.console__header .icon:hover {
-    color: var(--dark5);
-    border-color: var(--dark5);
+.console__header > div > button:hover {
+    color: var(--aqua2);
+    border-color: var(--aqua2);
+    box-shadow: 0px 0px 3px 1px var(--aqua1), inset 0px 0px 3px 1px var(--aqua1);
 }
-.console__header .icon:active {
-    color: var(--white2);
-    border-color: var(--white2);
+.console__header > div > button:active {
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 0px 0px 3px 1px var(--aqua4), inset 0px 0px 3px 1px var(--aqua4);
 }
-.console__template, .console__template--active .icon {
-    color: var(--dark3);
-    border-color: var(--dark3);
-}
-.console__template--active, .console__template--active .icon {
-    color: var(--dark5);
-    border-color: var(--dark5);
+#console__template-button--active {
+    color: var(--aqua2);
+    border-color: var(--aqua2);
+    box-shadow: 0px 0px 3px 1px var(--aqua1), inset 0px 0px 3px 1px var(--aqua1);
 }
