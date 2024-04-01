@@ -9,11 +9,13 @@ export function toggleState() {
 		asideFunctions.adjustImgInversion(true, false);
 		asideFunctions.minWidthAside(true, "left")
 		asideFunctions.adjustSizes(lAside.size, "0")
+		document.querySelector(".main").style.filter = "brightness(50%)"
 	}
 	else {
 		asideFunctions.adjustImgInversion(false, false);
 		asideFunctions.minWidthAside(false, "left");
 		asideFunctions.adjustSizes("0", "0")
+		document.querySelector(".main").style.filter = "brightness(100%)"
 	}
 	asideFunctions.rAsideHiddenStylesFix(true);
 }

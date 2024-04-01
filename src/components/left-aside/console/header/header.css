@@ -8,7 +8,52 @@
     box-sizing: content-box;
     white-space: nowrap;
     overflow: hidden;
+    position: relative;
 }
+:root {
+    --scroll-control: 10px;
+}
+.console__header > #before, .console__header > #after {
+    position: absolute;
+    margin: 0;
+    height: 100%;
+    width: var(--scroll-control);
+    background: var(--dark4);
+    cursor: pointer;
+} 
+.console__header > #before > div, .console__header > #after > div {
+    height: 100%;
+    width: 100%;
+    background: var(--dark5);
+}
+.console__header > #before:active div, .console__header > #after:active div {
+    background: var(--dark3);
+}
+.console__header > #before {
+    left: 0;
+    box-shadow: 3px 0px 10px 0px rgba(0,0,0,0.35);
+}
+.console__header > #after {
+    right: 40.88px;
+    box-shadow: -3px 0px 10px 0px rgba(0,0,0,0.35);
+}
+.console__header > #after > div {
+    clip-path: polygon(0 0, 100% 50%, 0 100%, 80% 50%);
+}
+.console__header > #before > div {
+    clip-path: polygon(100% 0, 20% 50%, 100% 100%, 0 50%);
+}
+/*==========-STYLE-TO-CHANGE-WHEN-OVERFLOW-=============*/
+.console__header > #before, .console__header > #after {
+    display: inline-block;
+}
+.console-scroller > button:first-child {
+    margin-left: var(--scroll-control);
+}
+.console-scroller > button:last-child {
+    margin-right: var(--scroll-control);
+}
+/*=====================================================*/
 .console-scroller {
     width: calc(100% - 40px);
     height: 100%;
@@ -17,15 +62,24 @@
     display: flex;
     align-items: center;
 }
+.console-scroller::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
 .console-scroller > button {
     height: 28px;
     width: 28px;
     margin-left: 8px;
     box-sizing: border-box;
-    border: 1px solid var(--dark3);
+    border-right: 1px solid var(--dark3);
     border-radius: 1px;
     flex-shrink: 0;
     color: var(--dark3);
+    font-size: 20px;
+    font-family: monospace;
+}
+.console-scroller > button:last-child {
+    border: none;
 }
 .add-template {
     width: 40px;
@@ -36,10 +90,11 @@
     align-items: center;
 }
 .add-template > button {
-    border: 1px solid var(--dark3);
+/*    border: 1px solid var(--dark3);*/
     height: 26px;
     width: 26px;
-    color: var(--dark3);
+    color: var(--dark5);
+    cursor: pointer;
 }
 .console__header .icon {
     width: 26px;
@@ -47,17 +102,17 @@
     color: inherit;
 }
 .console__header > div > button:hover {
-    color: var(--aqua2);
-    border-color: var(--aqua2);
-    box-shadow: 0px 0px 3px 1px var(--aqua1), inset 0px 0px 3px 1px var(--aqua1);
+    color: var(--dark5);
+/*    box-shadow: 0px 0px 3px 1px var(--aqua1), inset 0px 0px 3px 1px var(--aqua1);*/
 }
 .console__header > div > button:active {
     color: #fff;
-    border-color: #fff;
-    box-shadow: 0px 0px 3px 1px var(--aqua4), inset 0px 0px 3px 1px var(--aqua4);
+/*    box-shadow: 0px 0px 3px 1px var(--aqua4), inset 0px 0px 3px 1px var(--aqua4);*/
+}
+.console__header > .add-template > button:active {
+    color: var(--dark3);
 }
 #console__template-button--active {
-    color: var(--aqua2);
-    border-color: var(--aqua2);
-    box-shadow: 0px 0px 3px 1px var(--aqua1), inset 0px 0px 3px 1px var(--aqua1);
+    color: var(--aqua1);
+/*    box-shadow: 0px 0px 3px 1px var(--aqua1), inset 0px 0px 3px 1px var(--aqua1);*/
 }

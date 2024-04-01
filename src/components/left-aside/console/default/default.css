@@ -3,28 +3,88 @@
     height: 100%;
     color: var(--dark5);
     overflow: hidden;
-    word-wrap: break-word;
     font-family: monospace;
 }
-.console__body  > #default > span {
+#default > .message {
+    border-top: 1px solid var(--dark3);
     position: relative;
     display: flex;
-    margin-top: 5px;
-    border-top: 1px solid var(--dark3);
-    padding: 5px 0 5px 20px;
     align-items: center;
+    height: 22px;
+}
+
+/*#default > .message-system {
+    background: linear-gradient(to right, var(--dark1) 0%, transparent 100%) !important;
+}
+#default > .message-error {
+    background: linear-gradient(to right, #3d0b07 0%, transparent 100%) !important;
+}
+#default > .message-warning {
+    background: linear-gradient(to right, #3d3d07 0%, transparent 100%) !important;
+}
+#default > .message-check {
+    background: linear-gradient(to right, #073d0a 0%, transparent 100%) !important;
+}
+#default > .message::first-letter {
+    color: #fff;
+}*/
+
+
+#default > .message:last-child {
+    border-bottom: 1px solid var(--dark3);
+}
+.message__text {
+    padding: 5px 0 5px 5px;
     line-height: 0.85;
+    border-left: 1px solid var(--dark3);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;  
 }
-.console__body  > #default > span:hover {
-    color: #fff;
+.message__symbol {
+    width: 13px;
+    height: 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+    flex-shrink: 0;
+    box-shadow: 0px 0px 2px 1px var(--dark3), inset 0px 0px 8px .5px var(--dark4);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 2px;
 }
-.console__body  > #default > span::first-letter {
-    color: #fff;
+/*.message:nth-of-type(1) > .message__symbol {
+    box-shadow: 0px 0px 2px .5px yellow, inset 0px 0px 8px 1px yellow;
+
 }
-.console__body  > #default > span:first-child {
-    margin-top: 0;
+.message:nth-of-type(2) > .message__symbol {
+    box-shadow: 0px 0px 2px .5px #fc2d2d, inset 0px 0px 8px 1px #fc2d2d !important;
+
+}*/
+.message__symbol > .icon-warning {
+    color: #ffe347;
 }
-.console__body  > #default > span::before {
+.message__symbol > .icon-error {
+    color: #fc2d2d;
+    width: 80%;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: indianred;
+    color: #ff4747;
+}
+.message__symbol > .icon-check {
+    color: #63ff47;
+    color: var(--aqua4);
+    width: 95%;
+}
+.message__symbol > .icon-system {
+    color: var(--aqua1);
+}
+/*#default > .message::before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -34,12 +94,15 @@
     border-radius: 4px;
     background: var(--aqua3);
     box-shadow: 0px 0px 4px 2px var(--aqua1)
-}
-.console__body  > #default > div {
+}*/
+
+
+/*For the "textarea"*/
+/*.console__body  > #default > div {
     width: 100%;
     height: calc(100vh - 40px);
     border-top: 1px solid var(--dark3);
     margin-top: 5px;
     font-family: monospace;
     color: var(--dark1);
-}
+}*/
