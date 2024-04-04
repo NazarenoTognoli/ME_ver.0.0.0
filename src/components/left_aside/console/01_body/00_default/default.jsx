@@ -25,12 +25,12 @@ const CheckMessage = ({content}) => <Message Icon={BsCheckCircleFill} iconClassN
 function Default() {
     return (
         <div id="default" className="console__template">
-            <SystemMessage content="Type info to seek reference"/>
-            <SystemMessage content="System message"/>
+            <SystemMessage content="Type info to seek reference."/>
+            {/*<SystemMessage content="System message"/>
             <ErrorMessage content="Error message"/>
             <WarningMessage content="Warning message"/>
             <WarningMessage content="Warning message n2"/>
-            <CheckMessage content="Passed prove n0"/>
+            <CheckMessage content="Passed prove n0"/>*/}
         </div>)
 }
 

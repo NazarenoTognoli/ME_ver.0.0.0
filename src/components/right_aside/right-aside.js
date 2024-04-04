@@ -1,8 +1,8 @@
 import { toggleState } from './toggle-state.js'
 import { applyResizeEvent, start, resizeProcess, end } from './resize.js'
-import * as subsectionButtons from './subsection-buttons/resize.js'
-import './section-buttons/section-buttons.js'
-import './subsection-buttons/subsection-buttons.js'
+import * as subsectionButtons from './subsection_buttons/resize.js'
+import './section_buttons/section-buttons.js'
+import './subsection_buttons/subsection-buttons.js'
 
 let clickToggle = document.querySelector(".r-aside__button");
 

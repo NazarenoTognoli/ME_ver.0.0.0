@@ -1,3 +1,7 @@
+:root {
+    --scroll-control: 10px;
+}
+/*GENERAL STYLES*/
 .console__header {
     height: auto;
     min-height: 40px;
@@ -10,9 +14,13 @@
     overflow: hidden;
     position: relative;
 }
-:root {
-    --scroll-control: 10px;
+.console__header > div > button:hover {
+    color: var(--white2);
 }
+.console__header > div > button:active {
+    color: #fff;
+}
+/* SCROLL-BUTTONS (Help for naveging without mousepad in the console-scroller)*/
 .console__header > #before, .console__header > #after {
     position: absolute;
     margin: 0;
@@ -43,17 +51,7 @@
 .console__header > #before > div {
     clip-path: polygon(100% 0, 20% 50%, 100% 100%, 0 50%);
 }
-/*==========-STYLE-TO-CHANGE-WHEN-OVERFLOW-=============*/
-.console__header > #before, .console__header > #after {
-    display: inline-block;
-}
-.console-scroller > button:first-child {
-    margin-left: var(--scroll-control);
-}
-.console-scroller > button:last-child {
-    margin-right: var(--scroll-control);
-}
-/*=====================================================*/
+/*CONSOLE SCROLLER (where all the buttons are displayed for naveging)*/
 .console-scroller {
     width: calc(100% - 40px);
     height: 100%;
@@ -78,9 +76,14 @@
     font-size: 20px;
     font-family: monospace;
 }
+.console-scroller > button:first-child {
+    margin-left: var(--scroll-control);
+}
 .console-scroller > button:last-child {
+    margin-right: var(--scroll-control);
     border: none;
 }
+/*ADD TEMPLATE BUTTON (for adding new sections)*/
 .add-template {
     width: 40px;
     height: 100%;
@@ -90,7 +93,6 @@
     align-items: center;
 }
 .add-template > button {
-/*    border: 1px solid var(--dark3);*/
     height: 26px;
     width: 26px;
     color: var(--dark5);
@@ -101,18 +103,10 @@
     height: 26px;
     color: inherit;
 }
-.console__header > div > button:hover {
-    color: var(--dark5);
-/*    box-shadow: 0px 0px 3px 1px var(--aqua1), inset 0px 0px 3px 1px var(--aqua1);*/
-}
-.console__header > div > button:active {
-    color: #fff;
-/*    box-shadow: 0px 0px 3px 1px var(--aqua4), inset 0px 0px 3px 1px var(--aqua4);*/
-}
 .console__header > .add-template > button:active {
     color: var(--dark3);
 }
+/*ACTIVE-STYLES (active section indication)*/
 #console__template-button--active {
-    color: var(--aqua1);
-/*    box-shadow: 0px 0px 3px 1px var(--aqua1), inset 0px 0px 3px 1px var(--aqua1);*/
+    color: var(--aqua4);
 }

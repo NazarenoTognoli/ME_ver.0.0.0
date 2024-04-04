@@ -13,12 +13,13 @@ function AddTemplate() {
         )
 }
 
-function TemplateScroll() {
+function HeaderScroll() {
     return (
         <div className="scrollbar-custom console-scroller">
             <button id="console-button" className="console__template-button" id="console__template-button--active">
                 <FiTerminal className="icon" />
             </button>
+            {/*HERE ARE DISPLAYED THE NEW TEMPLATES CREATED*/}
             <button className="console__template-button console__template-button--created">
                 <span>00</span>
             </button>
@@ -54,7 +55,7 @@ function Header() {
         <header className="console__header">
             <button id="before"><div></div></button>  
             <button id="after"><div></div></button>
-            <TemplateScroll />
+            <HeaderScroll />
             <AddTemplate />
         </header>)
 }
