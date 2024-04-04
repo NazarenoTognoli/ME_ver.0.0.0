@@ -1,0 +1,50 @@
+.r-aside {
+    display: flex;
+    width: 0;
+    position: absolute;
+    height: 100vh;
+    background: var(--dark3);
+    transition: width .3s ease;
+    flex-wrap: nowrap;
+    user-select: none;
+    max-width: calc(100vw - 50px);
+    right: 0;
+}
+.r-aside__button {
+    left: 0;
+    transform: translateX(-20px);
+    box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+        background-image: url("../../assets/img/arrow-gray-inverted.png");
+
+}
+.r-aside__button-inverted {
+    background-image: url("../../assets/img/arrow-gray.png")   
+}
+.r-aside__button:hover {
+    background-image: url("../../assets/img/arrow-aqua-inverted.png");
+}
+.r-aside__button-inverted:hover {
+    background-image: url("../../assets/img/arrow-aqua.png");
+}
+.r-aside__button-tooltip {
+    top: 28px;
+    right: 4px;
+}
+.r-aside__button-tooltip::before {
+    top: -5px;
+    right: 5px;
+}
+.r-aside__resize-bar {
+    background: var(--dark2);
+    flex-basis: 7px;
+    cursor: col-resize;
+}
+.r-aside__body {
+    display: flex;
+    position: relative;
+    height: 100%;
+    flex-basis: 100%;
+    background: var(--dark3);
+    transition: flex .3s ease;
+    flex-wrap: wrap;
+}
