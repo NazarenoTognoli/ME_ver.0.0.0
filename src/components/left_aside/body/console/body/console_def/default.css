@@ -12,7 +12,9 @@
     align-items: center;
     height: 22px;
 }
-
+#default > .message:nth-of-type(1) {
+    border-top: none;
+}
 /*#default > .message-system {
     background: linear-gradient(to right, var(--dark1) 0%, transparent 100%) !important;
 }

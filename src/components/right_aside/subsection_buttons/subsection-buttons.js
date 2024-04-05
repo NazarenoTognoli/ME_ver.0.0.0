@@ -1,5 +1,5 @@
 import { applyActiveStyles } from '../shared/section-buttons-group.js'
-import utils from '../../../utils/utils.js'
+import utils from '/utils.js'
 import resizeProcess from './resize.js'
 
 applyActiveStyles("r-aside__subsection-button")

@@ -1,6 +1,6 @@
 import React from 'react'
 import './default.css'
-import utils from '../../../../../../utils/utils.js'
+import utils from '/utils.js'
 
 
 function Default() {

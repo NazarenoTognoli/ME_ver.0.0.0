@@ -1,16 +1,7 @@
 import React from 'react'
 import './console.css'
 import Header from './header/header.jsx'
-import Default from './body/console_def/default.jsx'
-
-
-function Body() {
-    return (
-        <div className="console__body">
-            <Default />
-        </div>
-        )
-}
+import Body from './body/body.jsx'
 
 function Console() {
     return (

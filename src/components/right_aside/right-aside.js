@@ -3,7 +3,7 @@ import { start, resizeProcess, end } from './resize.js'
 import './section_buttons/section-buttons.js'
 import './subsection_buttons/subsection-buttons.js'
 import * as subsectionButtons from './subsection_buttons/resize.js'
-import utils from '../../utils/utils.js'
+import utils from '/utils.js'
 
 let clickToggle = document.querySelector(".r-aside__button");
 

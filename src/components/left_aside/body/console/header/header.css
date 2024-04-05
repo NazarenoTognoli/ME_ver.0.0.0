@@ -13,6 +13,7 @@
     white-space: nowrap;
     overflow: hidden;
     position: relative;
+    border-bottom: 1px solid var(--dark3);
 }
 .console__header > div > button:hover {
     color: var(--white2);

@@ -1,16 +1,6 @@
 import './left-aside.css'
 import React from 'react'
-import Console from './body/console/console.jsx'
-import Content from './body/content/content.jsx'
-
-function Body() {
-    return (
-        <div className="l-aside__body">
-            <Console />
-            <Content />
-        </div>
-    )
-}
+import Body from './body/body.jsx'
 
 function LeftAside() {
     return (
