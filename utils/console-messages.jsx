@@ -19,8 +19,8 @@ const Console = {
             </div>
         );
     },
-    System: function ({content}) { return
-            <Console.Message 
+    System: function ({content}) { 
+        return <Console.Message 
                 Icon={BsCpuFill} 
                 iconClassName="icon-system" 
                 messageClass = "message-system" 

@@ -4,35 +4,56 @@
     color: var(--white);
     overflow: hidden;
     font-family: monospace;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
-#default > .message {
+#default > .input, #default > .output {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*======================================*/
+/*======================================*/
+/*======================================*/
+/*======================================*/
+#default > .output > .message {
     border-top: 1px solid var(--dark3);
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
     height: 22px;
 }
-#default > .message:nth-of-type(1) {
+#default > .output > .message:nth-of-type(1) {
     border-top: none;
 }
-/*#default > .message-system {
-    background: linear-gradient(to right, var(--dark1) 0%, transparent 100%) !important;
-}
-#default > .message-error {
-    background: linear-gradient(to right, #3d0b07 0%, transparent 100%) !important;
-}
-#default > .message-warning {
-    background: linear-gradient(to right, #3d3d07 0%, transparent 100%) !important;
-}
-#default > .message-check {
-    background: linear-gradient(to right, #073d0a 0%, transparent 100%) !important;
-}
-#default > .message::first-letter {
-    color: #fff;
-}*/
-
-
-#default > .message:last-child {
+#default > .output > .message:last-child {
     border-bottom: 1px solid var(--dark3);
 }
 .message__text {
@@ -46,8 +67,7 @@
 .message__symbol {
     width: 13px;
     height: 13px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 5px;
     flex-shrink: 0;
     box-shadow: 0px 0px 2px 1px var(--dark3), inset 0px 0px 8px .5px var(--dark4);
     display: flex;
@@ -56,14 +76,6 @@
     position: relative;
     border-radius: 2px;
 }
-/*.message:nth-of-type(1) > .message__symbol {
-    box-shadow: 0px 0px 2px .5px yellow, inset 0px 0px 8px 1px yellow;
-
-}
-.message:nth-of-type(2) > .message__symbol {
-    box-shadow: 0px 0px 2px .5px #fc2d2d, inset 0px 0px 8px 1px #fc2d2d !important;
-
-}*/
 .message__symbol > .icon-warning {
     color: #ffe347;
 }
@@ -87,25 +99,3 @@
 .message__symbol > .icon-system {
     color: var(--aqua4);
 }
-/*#default > .message::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    left: 9px;
-    width: 6px;
-    height: 6px;
-    border-radius: 4px;
-    background: var(--aqua3);
-    box-shadow: 0px 0px 4px 2px var(--aqua1)
-}*/
-
-
-/*For the "textarea"*/
-/*.console__body  > #default > div {
-    width: 100%;
-    height: calc(100vh - 40px);
-    border-top: 1px solid var(--dark3);
-    margin-top: 5px;
-    font-family: monospace;
-    color: var(--dark1);
-}*/
