@@ -1,6 +1,6 @@
 import { toggleState } from './functions/toggle-state.js'
 import { start, resizeProcess, end } from './functions/resize.js'
-import './body/console/console.js'
+import './console/console.js'
 import utils from '/utils.js'
 
 let clickToggle = document.querySelector('.l-aside__button')

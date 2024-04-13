@@ -1,7 +1,7 @@
 import { resizeProcess } from './resize.js'
 import utils from '/utils.js'
 import './header/header.js'
-import './body/body.js'
+import './console_def/default.js'
 
 utils.resize(".console__resize-bar", ".console", 
     ()=>{},
