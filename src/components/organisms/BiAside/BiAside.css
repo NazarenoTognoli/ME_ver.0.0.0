@@ -1,0 +1,77 @@
+.bi-aside {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 0;
+    height: 100vh;
+    background: var(--dark4);
+    transition: width .3s ease;
+    flex-wrap: nowrap;
+    max-width: calc(100vw - 50px);
+    z-index: 2;
+}
+.bi-aside > .body {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.bi-aside > button {
+    background: var(--dark4);
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    flex: 0;
+    display: flex;
+    justify-content: center;
+    alignItems: center;
+    opacity: 100%;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden; 
+}
+.left-aside {
+    left: 0;
+}
+.right-aside {
+    right: 0;
+}
+.left-aside > button {
+    right: 0;
+    transform: translateX(20px);
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.right-aside > button {
+    left: 0;
+    transform: translateX(-20px);
+    box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.left-aside > .button {
+    background-image: url("assets/img/arrow-gray.png");
+}
+.left-aside > .button:hover {
+    background-image: url("assets/img/arrow-aqua.png");
+}
+.left-aside > .button-inverted {
+    background-image: url("assets/img/arrow-gray-inverted.png");
+}
+.left-aside > .button-inverted:hover {
+    background-image: url("assets/img/arrow-aqua-inverted.png");
+}
+
+.right-aside > .button {
+    background-image: url("assets/img/arrow-gray-inverted.png");
+}
+.right-aside > .button:hover {
+    background-image: url("assets/img/arrow-aqua-inverted.png");
+}
+.right-aside > .button-inverted {
+    background-image: url("assets/img/arrow-gray.png");
+}
+.right-aside > .button-inverted:hover {
+    background-image: url("assets/img/arrow-aqua.png");
+}
