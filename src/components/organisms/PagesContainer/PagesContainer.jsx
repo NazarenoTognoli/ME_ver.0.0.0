@@ -33,21 +33,21 @@ export default PagesContainer
 
 //SECTION OVER HERE FOR TESTING
 
-/*
-<section class="ISH-section section">
+/*<section className="ISH-section section">
                     <header>
-                        <div class="search-input">  
-                            <div class="search-input__state"></div>
-                            <input class="search-input__input" type="text" name="" placeholder="Search">
+                        <div className="search-input">  
+                            <div className="search-input__state"></div>
+                            <input className="search-input__input" type="text" name="" placeholder="Search"/>
                         </div>
-                        <div class="add-item">
-                            <div class="add-item__state"></div>
-                            <input type="text" name="" class="add-item__input" placeholder="Drop Link Here">
-                            <button class="add-item__button"></button>
+                        <div className="add-item">
+                            <div className="add-item__state"></div>
+                            <input type="text" name="" className="add-item__input" placeholder="Drop Link Here"/>
+                            <button className="add-item__button"></button>
                         </div>
-                        <button class="edit-group-button">delete multiple, config, mod structure</button>
+                        <button className="edit-group-button">delete multiple, config, mod structure</button>
                     </header>
                     <main>
                     </main>
-                </section>
+            </section>
+
 */
