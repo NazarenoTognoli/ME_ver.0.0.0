@@ -1,14 +1,15 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 
 import './PagesContainer.css'
 
 function PagesContainer() {
-    const rightAsideIsToggled = useSelector((state) => state["right-aside"].isToggled)
-    const leftAsideIsToggled = useSelector((state) => state["left-aside"].isToggled)
-
+    //const rightAsideIsToggled = useSelector((state) => state["right-aside"].isToggled)
+    //const leftAsideIsToggled = useSelector((state) => state["left-aside"].isToggled)
+    //style={{filter: rightAsideIsToggled || leftAsideIsToggled ? 'brightness(50%)' : 'brightness(100%)'}}
+    
     return ( 
-        <div className="pages-container" style={{filter: rightAsideIsToggled || leftAsideIsToggled ? 'brightness(50%)' : 'brightness(100%)'}}>
+        <div className="pages-container" >
             <nav className="top-nav-laterals"></nav>
             <p style={{color: '#F00', textAlign: 'center', fontSize: '18px', width: '100%'}}>DENVER IS DEATH</p> 
         </div> )

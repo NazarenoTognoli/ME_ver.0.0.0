@@ -1,43 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// document.addEventListener('keydown', (event) => {
-//   if ((event.key === (left ? "a" : "l") || event.key === (left ? "A" : "L")) && event.altKey) {}
-// });
-
-const createAsideSlice = (side) => {
-  return createSlice({
-    name: `${side}AsideButton`,
+const biAsideSlice = createSlice({
+    name: `biAside`,
     initialState: {
-      isToggled: false,
+      leftIsToggled: false,
+      rightIsToggled: false
     },
     reducers: {
-      setIsToggled: (state, action) => {
-        return {
-          ...state,
-          isToggled: action.payload.value !== undefined ? action.payload.value : !state.isToggled
-        };
-      }
+      toggleLeft: (state, action) => ({
+        ...state,
+        leftIsToggled: !state.leftIsToggled,
+        rightIsToggled: false
+      }),
+      toggleRight: (state, action) => ({
+        ...state,
+        rightIsToggled: !state.rightIsToggled,
+        leftIsToggled: false
+      })
     }
-  })
-}
+})
 
-export const leftAsideSlice = createAsideSlice('left');
-export const rightAsideSlice = createAsideSlice('right');
+export const { toggleLeft, toggleRight } = biAsideSlice.actions;
 
-export const { setIsToggled: setLeftIsToggled } = leftAsideSlice.actions;
-export const { setIsToggled: setRightIsToggled } = rightAsideSlice.actions;
-
-export default {
-  leftAsideSliceReducer: leftAsideSlice.reducer,
-  rightAsideSliceReducer: rightAsideSlice.reducer
-}
-
-export const toggleLeftAside = () => (dispatch) => {
-    dispatch(setLeftIsToggled({ value: undefined }));
-    dispatch(setRightIsToggled({ value: false }));
-};
-
-export const toggleRightAside = () => (dispatch) => {
-    dispatch(setRightIsToggled({ value: undefined }));
-    dispatch(setLeftIsToggled({ value: false }));
-};
+export default biAsideSlice.reducer

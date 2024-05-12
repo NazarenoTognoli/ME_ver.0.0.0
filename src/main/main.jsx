@@ -1,4 +1,6 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+import { store } from './store.js';
 
 import BiAside from '../components/organisms/BiAside/BiAside.jsx'
 import PagesContainer from '../components/organisms/PagesContainer/PagesContainer.jsx'
@@ -11,22 +13,24 @@ import './normalize.css'
 function Main() {
     return (
         <>
-            <BiAside type="left-aside">
-                <Console>
-                    {/*<ConsoleHeader />
-                    <ConsoleTemplate />*/}
-                </Console>
-                <CustomizableContent>
-                    {/*<CustomTemplate />*/}
-                </CustomizableContent>
-            </BiAside>
-            <PagesContainer>
-                {/*<Page /> */}
-            </PagesContainer>
-            <BiAside type="right-aside">
-                {/*<MainNav />
-                <SectionNav />*/}
-            </BiAside>
+            <Provider store={store}>
+                <BiAside type="left-aside">
+                    <Console>
+                        {/*<ConsoleHeader />
+                        <ConsoleTemplate />*/}
+                    </Console>
+                    <CustomizableContent>
+                        {/*<CustomTemplate />*/}
+                    </CustomizableContent>
+                </BiAside>
+                <PagesContainer>
+                    {/*<Page /> */}
+                </PagesContainer>
+                <BiAside type="right-aside">
+                    {/*<MainNav />
+                    <SectionNav />*/}
+                </BiAside>
+            </Provider>
         </>
     )
 }
