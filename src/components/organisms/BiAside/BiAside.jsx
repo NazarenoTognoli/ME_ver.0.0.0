@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { setIsToggled, setWidth, setIsResizing } from '@/features/biAside/biAsideSlice.js'
+import { setIsToggled, setWidth, setIsResizing } from '@/features/slices/biAsideSlice.js'
 
 import Aside from '../../atoms/Aside/Aside.jsx'
 import ResizeBar from '../../atoms/ResizeBar/ResizeBar.jsx';

@@ -1,38 +1,47 @@
 import React from 'react'
-import { Provider } from 'react-redux'
+import ReactDOM from 'react-dom/client'
+
+import { Provider, useSelector } from 'react-redux'
 import { store } from './store.js';
 
-import BiAside from '../components/organisms/BiAside/BiAside.jsx'
-import PagesContainer from '../components/organisms/PagesContainer/PagesContainer.jsx'
-import Console from '../components/organisms/Console/Console.jsx'
-import CustomizableContent from '../components/organisms/CustomizableContent/CustomizableContent.jsx'
+import BiAside from 'org/BiAside/BiAside.jsx'
+import PagesContainer from 'org/PagesContainer/PagesContainer.jsx'
+import Console from 'org/Console/Console.jsx'
+import ConsoleTemplate from 'org/ConsoleTemplate/ConsoleTemplate.jsx'
+import CustomizableContent from 'org/CustomizableContent/CustomizableContent.jsx'
 
 import './main.css'
 import './normalize.css'
 
-function Main() {
+function Body({children}) {
+    const somethingIsResizing = useSelector(state => state.app.somethingIsResizing);
     return (
-        <>
-            <Provider store={store}>
+        <div style={{userSelect: somethingIsResizing ? 'none' : ''}}>
+            {children} 
+        </div>
+    )
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+      <Provider store={store}>
+            <Body>
                 <BiAside type="left-aside">
                     <Console>
-                        {/*<ConsoleHeader />
-                        <ConsoleTemplate />*/}
+                        <ConsoleTemplate />
                     </Console>
                     <CustomizableContent>
                         {/*<CustomTemplate />*/}
                     </CustomizableContent>
                 </BiAside>
                 <PagesContainer>
-                    {/*<Page /> */}
+                    {/*<Page /> REACT ROUTER*/}
                 </PagesContainer>
                 <BiAside type="right-aside">
                     {/*<MainNav />
                     <SectionNav />*/}
                 </BiAside>
-            </Provider>
-        </>
-    )
-}
-
-export default Main
+            </Body>
+        </Provider>
+    </React.StrictMode>
+)

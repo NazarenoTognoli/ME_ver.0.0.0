@@ -5,8 +5,11 @@ const defaultConfig = () => ({
 
 const defaultOptions = () => ({});
 
+let isResizing = false;
+
 function resizeLogic({config = defaultConfig(), options = defaultOptions()}) {
-    let isResizing = false;
+    if (isResizing) return //Salida rapida de la función para evitar problemas de rendimiento
+
     options.originalSizeWidth = config.width();
     options.originalSizeHeight = config.height();
 
@@ -40,8 +43,8 @@ function resizeLogic({config = defaultConfig(), options = defaultOptions()}) {
     const startActions = () => {
         document.addEventListener('mousemove', resizeActions);
         document.addEventListener('mouseup', stopActions);
-        isResizing = true;      
-
+        isResizing = true;
+        
         options.startPositionX = event.clientX;
         options.startPositionY = event.clientY;
         
@@ -51,8 +54,6 @@ function resizeLogic({config = defaultConfig(), options = defaultOptions()}) {
         if (config.startActions) {
           config.startActions(options);
         }
-        
-        document.body.style.userSelect = 'none';
     }
 
     const resizeActions = () => {
@@ -78,8 +79,6 @@ function resizeLogic({config = defaultConfig(), options = defaultOptions()}) {
         if (config.stopActions) {
           config.stopActions(options);
         }
-        
-        document.body.style.userSelect = '';
     }
 
     return startActions
