@@ -5,7 +5,7 @@
     width: 0;
     height: 100vh;
     background: var(--dark4);
-    transition: width .3s ease;
+/*    transition: width .3s ease;*/
     flex-wrap: nowrap;
     max-width: calc(100vw - 50px);
     z-index: 2;

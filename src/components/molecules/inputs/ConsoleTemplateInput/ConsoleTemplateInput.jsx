@@ -5,7 +5,7 @@ function ConsoleTemplateInput() {
     return (
         <div className="input">
             <button className="input__resize-bar"></button>
-            <textarea className="body">
+            <textarea className="body" name="console-template-input">
             </textarea>
         </div>)
 }

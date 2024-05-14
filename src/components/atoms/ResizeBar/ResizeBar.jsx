@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import resizeLogic from '@/features/resize/resizeLogic.js'
 
 const styles = (style = {}) => ({
     background: 'var(--dark2)',
@@ -7,14 +8,15 @@ const styles = (style = {}) => ({
     ...style
 })
 
-function ResizeBar({ style, onClick, className, id, onMouseEnter, onMouseLeave }) {
+function ResizeBar({ config, options, style, onClick, className, id, onMouseEnter, onMouseLeave }) {
     return (
         <div id={id}
-             style={styles(style)} 
+             style={styles(style)}
              onClick={onClick}
              className={className}
              onMouseEnter={onMouseEnter}
              onMouseLeave={onMouseLeave}
+             onMouseDown={resizeLogic({config, options})}
              >    
         </div>)
 }
