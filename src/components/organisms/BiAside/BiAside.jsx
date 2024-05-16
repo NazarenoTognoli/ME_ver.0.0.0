@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { setIsToggled, setWidth, setIsResizing } from '@/features/slices/biAsideSlice.js'
+import { setIsToggled, setWidth, setIsResizing } from 'slice/biAsideSlice.js'
 
 import Aside from '../../atoms/Aside/Aside.jsx'
 import ResizeBar from '../../atoms/ResizeBar/ResizeBar.jsx';
 import Tooltip from '../../molecules/Tooltip/Tooltip.jsx';
 import Button from '../../atoms/Button/Button.jsx';
 
-import { resizeBiAside } from '@/features/resize/resizeConfig.js'
+import { resizeBiAside } from '@/features/resize/resizeConfig.jsx'
 
 import './BiAside.css'
 
@@ -34,7 +34,12 @@ function BiAside({ children, type, onClick, toggledMinWidth = "6.94px", resizeBa
                     {children}
                 </div>
     const resizeBar = <ResizeBar 
-                        config={resizeBiAside(left, width, setWidthLocal, setIsResizingLocal)} 
+                        config={resizeBiAside({
+                            left: left, 
+                            width: width, 
+                            setWidth: setWidthLocal, 
+                            setIsResizing: setIsResizingLocal
+                        })} 
                         style={{
                             height: '100%', 
                             flexBasis: resizeBarFlexBasis
