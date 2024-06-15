@@ -1,2 +1,19 @@
-# life-track
-SPA for Tracking personal habits and consume, with data
+# manager-eternal-frontend
+- El objetivo es desarrollar un Software as a service que permita la resolución de problemas de forma conjunta y anónima sobre cualquier cuestión, como las siguientes:
+    - Cuestiones filosóficas.
+    - Cuestiones económicas.
+    - Cuestiones sistémicas.
+    - Obtención de información y cuestiones científicas.
+- Divido en varias secciones las cuales serían:
+    - Gestión de información.
+    - Gestión de patrones de implementación.
+    - Gestión de soluciones.
+    - Gestión de seguimiento.
+- Estas secciones estarían intrínsicamente relacionadas y serían utilizadas en conjunto etre varias personas mediante:
+    - Canales compartidos
+    - Publicaciones
+    - Sugerencias automáticas basadas en análisis estadísticos
+- La idea en términos generales es estandarizar las fases de generación de soluciones de forma abstracta y establecer un mecanismo de sugerencias basadas en algoritmos de big data y análisis exploratorio de datos de modo que sea posible ayudar a personas de todas partes del mundo a desarrollar, implementar y administrar sus soluciones.
+- Debido a la naturaleza compleja del proyecto, sus costos operativos y de tiempo, me limitaré a documentarlo solo de una forma vaga hasta que se concreticen sus funcionalidades.
+- De todos modos, estaré dividiendo el proyecto en soluciones separadas para cuestiones de practicas en diferentes tecnologías, de tal manera que pueda hacer comparaciones de eficiencia entre diferentes tecnologías, sus pros y contras, además de demostrar cierto dominio en ellas y mis habilidades adaptativas en cuanto a la adopción de nuevas soluciones.
+- La documentación de comparación de tecnologías en una misma solución, cualquiera que sea su naturaleza (visualización de datos, lógica gráfica, lógica de negocio, etc), estará siendo administrada en mi otro repositorio “solutions-comparison-and-proves”, donde organizaré las soluciones que vaya desarrollando en este proyecto.
