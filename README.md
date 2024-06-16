@@ -5,10 +5,10 @@
     - Cuestiones sistémicas.
     - Obtención de información y cuestiones científicas.
 - Divido en varias secciones las cuales serían:
-    - Gestión de información.
-    - Gestión de patrones de implementación.
-    - Gestión de soluciones.
-    - Gestión de seguimiento.
+    - Gestión de información, mapas de causalidad, analisis epistemológico, etc.
+    - Gestión de patrones de implementación, flexibilidad implementativa, etc.
+    - Gestión de desarrollo, análisis de factibilidad operativa, economía, riesgo, etc.
+    - Gestión de seguimiento, monitoreo, iteración, análisis de resultados, etc.
 - Estas secciones estarían intrínsicamente relacionadas y serían utilizadas en conjunto etre varias personas mediante:
     - Canales compartidos
     - Publicaciones
